@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="Zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ADM</title>
+
+  <link rel="stylesheet" href="devoopsv2/plugins/bootstrap/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/classic.css" /> -->
+  <link rel="stylesheet" href="devoopsv2/plugins/jquery-ui/jquery-ui.css">
+  <link rel="stylesheet" href="devoopsv2/css/style_v2.css?v=94c6123">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="jqGrid/css/ui.jqgrid.css">
+  <link rel="stylesheet" href="css/jqGrid.bootstrap.css">
+  <link rel="stylesheet" href="css/jquery-validation-1.13.1/validate.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/jqgrid.ttcms.css">
+  <link rel="stylesheet" href="css/bootstrap-ttcms.css">
+  <!-- bootstrap-toggle css -->
+  <link rel="stylesheet" href="js/bootstrap-plugin/bootstrap-toggle-master/css/bootstrap-toggle.min.css">
+
+  <script src="devoopsv2/plugins/jquery/jquery.min.js"></script>
+  <script src="devoopsv2/plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="devoopsv2/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="jqGrid/js/i18n/grid.locale-tw.js"></script>
+  <script src="jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="js/jqGrid-define.js"></script>
+  <script src="devoopsv2/js/devoops.js"></script>
+  <script src="jquery-validation-1.13.1/dist/jquery.validate.min.js"></script>
+  <script src="jquery-validation-1.13.1/dist/localization/messages_zh_TW.js"></script>
+  <script src="jquery-validation-1.13.1/dist/additional-methods.min.js"></script>
+  <script type="text/javascript" src="js/common/jquery-validation-define.js"></script>
+  <script src="js/bootstrap-growl.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-plugin/bootbox.min.js"></script>
+  <script type="text/javascript" src="js/bootbox-define.js"></script>
+  <script src="js/jquery-plugin.js"></script>
+
+  <script type="text/javascript" src="js/window-define.js"></script>
+  <script type="text/javascript" src="js/common/buildUuid.js"></script>
+
+  <script type="text/javascript" src="datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+  <script type="text/javascript" src="js/common/customDatePicker.js"></script>
+
+  <!-- TT SYSTEM MESSAGE -->
+  <script type="text/javascript" src="js/ttMessage.js"></script>
+  <!-- For disable mouseScrolling in input number -->
+  <script src="js/bootstrap-ttcms.js"></script>
+  <!-- countdown -->
+  <script src="js/jquery.countdown.min.js"></script>
+  <!-- bootstrap-toggle js -->
+  <script src="js/bootstrap-plugin/bootstrap-toggle-master/js/bootstrap-toggle.min.js"></script>
+  <script type="text/javascript" src="//js01.ttstaging.com.tw/codeMeta/codeMeta-tw.js"></script>
+
+  <link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css">
+  <link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css">
+  <link id="load-css-2" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/table/table.css">
+  <link id="load-css-3" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/format.css">
+
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container-fluid expanded-panel">
+      <div class="row">
+        <div id="logo" class="col-xs-12 col-sm-6">
+          <a class="brand" href="">TTADM 台灣經貿網內容管理平台</a>
+        </div>
+        <div id="top-panel" class="col-xs-12 col-sm-6">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 top-panel-right">
+              <ul class="nav navbar-nav pull-right panel-menu">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
+                    <div class="avatar">
+                      <img src="devoopsv2/img/avatar.jpg" class="img-circle" alt="avatar" />
+                    </div>
+                    <i class="fa fa-angle-down pull-right"></i>
+                    <div class="user-mini pull-right">
+                      <span class="welcome">Welcome,</span>
+                      <span>LiuccHywebSU</span>
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/personalInfoeditShow">
+                        <i class="fa fa-user"></i>
+                        <span>Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://taitramember.taitra.org.tw/cas/logout?service=http%3A%2F%2Fadm.ttstaging.com.tw%2Flogout">
+                        <i class="fa fa-power-off"></i>
+                        <span>Logout</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span>20230424_110323-rev94c6123</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span></span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="main" class="container-fluid">
+		<div class="row">
+
+      <div id="sidebar-left" class="col-xs-2 col-sm-2">
+        <ul id="left_menu" class="nav main-menu">
+          <!-- no child -->
+          <li><a id="dashboard" target="_self" href="dashboard"> <span class="hidden-xs"> 資訊儀表板</span></a></li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">會員權益訂單管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="financeAnnualPlanlist" target="_self" href="financeAnnualPlanlist">工作計畫管理</a></li>
+              <li><a id="financeTPMainlist" target="_self" href="financeTPMainlist">TP專輯管理</a></li>
+              <li><a id="financeTPYearlist" target="_self" href="financeTPYearlist">TP專輯年度管理</a></li>
+              <li><a id="financePageLayoutMainlist" target="_self" href="financePageLayoutMainlist">TP專輯版位管理</a></li>
+              <li><a id="financePaymentMethodeditShow" target="_self" href="financePaymentMethodeditShow">付款方式說明設定</a></li>
+              <li><a id="financeProductlist" target="_self" href="financeProductlist">產品管理</a></li>
+              <li><a id="financePlanlist" target="_self" href="financePlanlist">方案管理</a></li>
+              <li><a id="financeProductRedeemlist" target="_self" href="financeProductRedeemlist">私房禮 / TT幣商品管理</a></li>
+              <li><a id="financeProdcateRolelist" target="_self" href="financeProdcateRolelist">特殊產品類型權益角色設定</a></li>
+              <li><a id="financePurchaseOrderlist" target="_self" href="financePurchaseOrderlist">訂單管理</a></li>
+              <li><a id="financePoShipmentlist" target="_self" href="financePoShipmentlist">出貨管理</a></li>
+              <li><a id="financeThrowAccountinglist" target="_self" href="financeThrowAccountinglist">訂單拋轉財務系統</a></li>
+              <li><a id="financePostlist" target="_self" href="financePostlist">掛號郵件登錄</a></li>
+              <li><a id="https://www.google.com/" target="_blank" href="https://www.google.com/">boan test</a></li>
+              <li><a id="epRightProductChangeLoglist" target="_self" href="epRightProductChangeLoglist">訂單的型錄變更紀錄</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">報表-財務統計</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="financeMemberReportlist" target="_self" href="financeMemberReportlist">會員訂單統計</a></li>
+              <li><a id="financePromoteReportlist" target="_self" href="financePromoteReportlist">徵集推廣績效</a></li>
+              <li><a id="financeTPReportlist" target="_self" href="financeTPReportlist">TP專輯表</a></li>
+              <li><a id="financePerformanceTargetlist" target="_self" href="financePerformanceTargetlist">每日業績目標統計</a></li>
+              <li><a id="financeRceivableReportlist" target="_self" href="financeRceivableReportlist">客服人員追款分析</a></li>
+              <li><a id="financeAllowanceReportlist" target="_self" href="financeAllowanceReportlist">客服人員加給統計</a></li>
+              <li><a id="financeEpMemberOrderReportlist" target="_self" href="financeEpMemberOrderReportlist">會員家數</a></li>
+              <li><a id="financeTpSubscribeReportlist" target="_self" href="financeTpSubscribeReportlist">TP專輯續訂率報表</a></li>
+              <li><a id="financeTpAnalyticReportlist" target="_self" href="financeTpAnalyticReportlist">續訂率分析報表</a></li>
+              <li><a id="financeThrowAccountReportlist" target="_self" href="financeThrowAccountReportlist">財務對帳報表</a></li>
+              <li><a id="financeDownloadPaymentReportlist" target="_self" href="financeDownloadPaymentReportlist">下載繳費條碼</a>
+              </li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">交易訂單、金鑰管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="hitrustkeymanagementlist" target="_self" href="hitrustkeymanagementlist">HiTrust金鑰管理</a></li>
+              <li><a id="paymentmanagementlist" target="_self" href="paymentmanagementlist">玉山兩岸支付通認證管理</a></li>
+              <li><a id="ezOrderlist" target="_self" href="ezOrderlist">交易訂單管理</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">系統管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="userlist" target="_self" href="userlist">使用者管理</a></li>
+              <li><a id="localCurrencyControleditShow" target="_self" href="localCurrencyControleditShow">幣別切換選項管理</a></li>
+              <li><a id="rolelist" target="_self" href="rolelist">角色管理</a></li>
+              <li><a id="codemetalist" target="_self" href="codemetalist">代碼管理</a></li>
+              <li><a id="usereditShowPasswordRule" target="_self" href="usereditShowPasswordRule">密碼規則管理</a></li>
+              <li><a id="passwordlogforcompanyuserlist" target="_self" href="passwordlogforcompanyuserlist">密碼寄送記錄管理</a>
+              </li>
+              <li><a id="parameterlist" target="_self" href="parameterlist">參數管理</a></li>
+              <li><a id="verifyGroupgroupList" target="_self" href="verifyGroupgroupList">權限群組管理</a></li>
+              <li><a id="catalogstandardlist" target="_self" href="catalogstandardlist">標準TaitraCode管理</a></li>
+              <li><a id="productHelpereditShow" target="_self" href="productHelpereditShow">設定型錄小幫手</a></li>
+              <li><a id="msgcenterlist" target="_self" href="msgcenterlist">即時通訊發送清單</a></li>
+              <li><a id="offerToSellAgentlist" target="_self" href="offerToSellAgentlist">OFFER TO SELL 代刊管理</a></li>
+              <li><a id="as3showcontentquery" target="_self" href="as3showcontentquery">S3 檔案內容查看</a></li>
+              <li><a id="messagelist" target="_self" href="messagelist">訊息管理</a></li>
+              <li><a id="cndataloglist" target="_self" href="cndataloglist">資料異動記錄</a></li>
+              <li><a id="defaultPictureGroupManagementlist" target="_self"
+                  href="defaultPictureGroupManagementlist">預設圖管理</a></li>
+              <li><a id="marketRankinglist" target="_self" href="marketRankinglist">市場熱門度資訊設定</a></li>
+              <li><a id="cnEventCsMapeditShow" target="_self" href="cnEventCsMapeditShow">活動快選與產業別設定</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">公司管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="supplierlist" target="_self" href="supplierlist">供應商管理</a></li>
+              <li><a id="buyerlist" target="_self" href="buyerlist">買家管理</a></li>
+              <li><a id="companyuserlist" target="_self" href="companyuserlist">公司會員管理</a></li>
+              <li><a id="gradingConditionlist" target="_self" href="gradingConditionlist">分級條件設定</a></li>
+              <li><a id="gradingResultlist" target="_self" href="gradingResultlist">分級結果查詢</a></li>
+              <li><a id="comImportMasterlist" target="_self" href="comImportMasterlist">公司會員匯入2021</a></li>
+              <li><a id="departmentlist" target="_self" href="departmentlist">部門管理</a></li>
+              <li><a id="companyDomainNameReservelist" target="_self" href="companyDomainNameReservelist">網域保留字管理</a></li>
+              <li><a id="companyUrlApplylist" target="_self" href="companyUrlApplylist">網址異動審核</a></li>
+              <li><a id="companyToExternallist" target="_self" href="companyToExternallist">公司群組管理</a></li>
+              <li><a id="admProductImportlist" target="_self" href="admProductImportlist">型錄匯入</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">資料集管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="announcementlist" target="_self" href="announcementlist">公告管理</a></li>
+              <li><a id="eventlist" target="_self" href="eventlist">活動管理</a></li>
+              <li><a id="articleAdlist" target="_self" href="articleAdlist">廣告管理</a></li>
+              <li><a id="cnAdblocklist" target="_self" href="cnAdblocklist">廣告版位管理</a></li>
+              <li><a id="postAdblocklist" target="_self" href="postAdblocklist">刊登廣告管理</a></li>
+              <li><a id="newslist" target="_self" href="newslist">新聞管理</a></li>
+              <li><a id="specificationCategorylist" target="_self" href="specificationCategorylist">產品規格管理</a></li>
+              <li><a id="articleSystemAdlist" target="_self" href="articleSystemAdlist">系統廣告管理</a></li>
+              <li><a id="articleVideolist" target="_self" href="articleVideolist">影音管理</a></li>
+              <li><a id="articleStaticContentlist" target="_self" href="articleStaticContentlist">靜態資料管理</a></li>
+              <li><a id="resourceGrouplist" target="_self" href="resourceGrouplist">靜態資源管理</a></li>
+              <li><a id="globalPartnerthemeList" target="_self" href="globalPartnerthemeList">合作伙伴管理</a></li>
+              <li><a id="photoManagementlist" target="_self" href="photoManagementlist">圖片庫管理</a></li>
+              <li><a id="articleServiceIntroducelist" target="_self" href="articleServiceIntroducelist">服務說明管理</a></li>
+              <li><a id="relatedLinkslist" target="_self" href="relatedLinkslist">相關連結管理</a></li>
+              <li><a id="generalLinklist" target="_self" href="generalLinklist">泛用資料管理</a></li>
+              <li><a id="cnAnnouncementlist" target="_self" href="cnAnnouncementlist">公告資料集管理</a></li>
+              <li><a id="marqueelist" target="_self" href="marqueelist">跑馬燈資料管理</a></li>
+              <li><a id="taitraLocationlist" target="_self" href="taitraLocationlist">據點資訊管理</a></li>
+              <li><a id="associationlist" target="_self" href="associationlist">策略聯盟管理</a></li>
+              <li><a id="gpalist" target="_self" href="gpalist">各國採購商機管理</a></li>
+              <li><a id="cnCompanyStorylist" target="_self" href="cnCompanyStorylist">廠商故事管理</a></li>
+              <li><a id="cnMenulist" target="_self" href="cnMenulist">選單管理</a></li>
+              <li><a id="customerFeedbackLoglist" target="_self" href="customerFeedbackLoglist">回饋意見與建議管理</a></li>
+              <li><a id="featureSitelist" target="_self" href="featureSitelist">精選專區管理</a></li>
+              <li><a id="nationalMarketlist" target="_self" href="nationalMarketlist">國家市場資訊管理</a></li>
+              <li><a id="publicationlist" target="_self" href="publicationlist">出版品資料集管理</a></li>
+              <li><a id="cnHeaderlist" target="_self" href="cnHeaderlist">Header管理</a></li>
+              <li><a id="footerlist" target="_self" href="footerlist">Footer管理</a></li>
+              <li><a id="cnKnowledgeeditShow" target="_self" href="cnKnowledgeeditShow">知識庫資料集管理</a></li>
+              <li><a id="cnMemberServiceeditShow" target="_self" href="cnMemberServiceeditShow">會員服務資料集管理</a></li>
+              <li><a id="tpmagazineIssuelist" target="_self" href="tpmagazineIssuelist">TP雜誌每期內容管理</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">資料集審核</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="productVerifylistVerify" target="_self" href="productVerifylistVerify"> 型錄審核 </a></li>
+              <li><a id="newslistVerify" target="_self" href="newslistVerify"> 新聞審核 </a></li>
+              <li><a id="testimonialslistVerify" target="_self" href="testimonialslistVerify"> 成功案例審核 </a></li>
+              <li><a id="topicVerifySettingtopiclist" target="_self" href="topicVerifySettingtopiclist"> 審核設定 </a></li>
+              <li><a id="articleProductBlackCategorySettinglist" target="_self"
+                  href="articleProductBlackCategorySettinglist"> 設定禁用型錄分類名單 </a></li>
+              <li><a id="articleProductVerifyReasonSettinglist" target="_self"
+                  href="articleProductVerifyReasonSettinglist">設定型錄審核不通過原因</a></li>
+              <li><a id="productUserAttrVerifylist" target="_self" href="productUserAttrVerifylist">自定義屬性審核</a></li>
+              <li><a id="verifyCnCompanyStorylist" target="_self" href="verifyCnCompanyStorylist">廠商故事審核</a></li>
+              <li><a id="verifyMultiArticleAdlist" target="_self" href="verifyMultiArticleAdlist">廣告審核</a></li>
+              <li><a id="verifyCnMemberMessagelist" target="_self" href="verifyCnMemberMessagelist">會員交換訊息審核</a></li>
+              <li><a id="articleProductNoVerifyComplist" target="_self" href="articleProductNoVerifyComplist">SU 廠商免審機制</a>
+              </li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">網站管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="ezPermanentColumneditShow" target="_self" href="ezPermanentColumneditShow">常駐列管理</a></li>
+              <li><a id="domainlist" target="_self" href="domainlist">網別管理</a></li>
+              <li><a id="chdomainlist" target="_self" href="chdomainlist">中文網網別管理</a></li>
+              <li><a id="catalogdefinelist" target="_self" href="catalogdefinelist">自定義Taitra Code</a></li>
+              <li><a id="warningSignslist" target="_self" href="warningSignslist">警語管理</a></li>
+              <li><a id="addomainlist" target="_self" href="addomainlist">facebook 與 google 廣告資料設定</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">後台管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="documentationlist" target="_self" href="documentationlist">文案管理</a></li>
+              <li><a id="mngtopiclist" target="_self" href="mngtopiclist">資料集設計</a></li>
+              <li><a id="layoutArealist" target="_self" href="layoutArealist">底圖管理</a></li>
+              <li><a id="menusysList" target="_self" href="menusysList">系統選單管理</a></li>
+              <li><a id="componentlist" target="_self" href="componentlist">元件管理</a></li>
+              <li><a id="videoTypelist" target="_self" href="videoTypelist">影音類別管理</a></li>
+              <li><a id="pictureTypelist" target="_self" href="pictureTypelist">圖片類型(請勿點擊)</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle active-parent active"> <span
+                class="hidden-xs">電子報管理</span></a>
+            <ul class="dropdown-menu" style="display: none;">
+              <li><a id="mailOpenRatiolist" target="_self" href="mailOpenRatiolist">電子報開信率查詢</a></li>
+              <li><a id="subscribelist" target="_self" href="subscribelist">中文網訂閱管理</a></li>
+              <li><a id="wwwsubscribelist" target="_self" href="wwwsubscribelist">外語網訂閱管理</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">關鍵字管理</span></a>
+            <ul class="dropdown-menu" style="display: none;">
+              <li><a id="keywordlist" target="_self" href="keywordlist">關鍵字查詢</a></li>
+              <li><a id="keywordblacklist" target="_self" href="keywordblacklist">黑名單查詢</a></li>
+              <li><a id="keywordsynonymlist" target="_self" href="keywordsynonymlist">同義詞管理</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">認證管理</span></a>
+            <ul class="dropdown-menu" style="display: none;">
+              <li><a id="companyCertificationVerifylist" target="_self" href="companyCertificationVerifylist">認證審核</a></li>
+              <li><a id="certificationlist" target="_self" href="certificationlist">認證資料庫管理</a></li>
+              <li><a id="certfocusarealist" target="_self" href="certfocusarealist">重點曝光認證區</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">商機管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="customBusinessTypelist" target="_self" href="customBusinessTypelist">商機自訂分類管理</a></li>
+              <li><a id="businessQualitylist" target="_self" href="businessQualitylist">商機質量表管理</a></li>
+              <li><a id="businessBlacklist" target="_self" href="businessBlacklist">商機黑名單管理</a></li>
+              <li><a id="businessVerifySettinglist" target="_self" href="businessVerifySettinglist">商機審核設定</a></li>
+              <li><a id="businessVerifylist" target="_self" href="businessVerifylist">商機審核</a></li>
+              <li><a id="businessMatchKeylist" target="_self" href="businessMatchKeylist">商機配對Key設定</a></li>
+              <li><a id="businessMatchNewKeylist" target="_self" href="businessMatchNewKeylist">商機配對Key設定(New)</a></li>
+              <li><a id="importRfqBusinesslist" target="_self" href="importRfqBusinesslist">商機Trade Inquiry匯入</a></li>
+              <li><a id="businessVerifysimplyList" target="_self" href="businessVerifysimplyList">商機審核(新)</a></li>
+              <li><a id="businessVerifysimplyNewList" target="_self" href="businessVerifysimplyNewList">商機查詢</a></li>
+              <li><a id="businessMessageTemplatelist" target="_self" href="businessMessageTemplatelist">訊息管理與應用</a></li>
+              <li><a id="todRecommendBusinessReportlist" target="_self"
+                  href="todRecommendBusinessReportlist">TOD推薦商機滿意度報表</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">郵件管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="multiMailRecordlist" target="_self" href="multiMailRecordlist">郵件範本管理</a></li>
+              <li><a id="marginalslist" target="_self" href="marginalslist">頁首頁尾管理</a></li>
+              <li><a id="contactGrouplist" target="_self" href="contactGrouplist">收件群組管理</a></li>
+              <li><a id="mailExportlist" target="_self" href="mailExportlist">郵件匯出紀錄管理</a></li>
+              <li><a id="mailWhiteListlist" target="_self" href="mailWhiteListlist">白名單維護(不在 prod 開啟)</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">關懷管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="returnMaillist" target="_self" href="returnMaillist">退信紀錄</a></li>
+              <li><a id="feedbackeditShow" target="_self" href="feedbackeditShow">意見回饋設定</a></li>
+              <li><a id="concernMaillist" target="_self" href="concernMaillist">關懷信發送管理</a></li>
+              <li><a id="refusingConcernMaillist" target="_self" href="refusingConcernMaillist">拒絕關懷名單管理</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">翻譯管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="translationOrderlist" target="_self" href="translationOrderlist">報價管理</a></li>
+              <li><a id="translationRecordlist" target="_self" href="translationRecordlist">記錄查詢</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">SEO管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="seoMetaDataGenerallist" target="_self" href="seoMetaDataGenerallist">SEO公版管理(新)</a></li>
+              <li><a id="seoMetaDataSpeciallist" target="_self" href="seoMetaDataSpeciallist">SEO客製管理(新)</a></li>
+              <li><a id="seoMetaDataKeywordlist" target="_self" href="seoMetaDataKeywordlist">SEO客製管理(搜尋頁)</a></li>
+              <li><a id="webCeoenter" target="_self" href="webCeoenter">關鍵字績效管理</a></li>
+              <li><a id="seoPageslist" target="_self" href="seoPageslist">網頁SEO設定(舊)</a></li>
+              <li><a id="seoMetaDataFrontGenerallist" target="_self" href="seoMetaDataFrontGenerallist">前台公版SEO管理(舊)</a>
+              </li>
+              <li><a id="seoOpenGraphlist" target="_self" href="seoOpenGraphlist">OpenGraph設定</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">排程和介接管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="schedulelist" target="_self" href="schedulelist">排程功能</a></li>
+              <li><a id="interfactlist" target="_self" href="interfactlist">介接項目</a></li>
+              <li><a id="cncronloglist" target="_self" href="cncronloglist">排程警訊管理</a></li>
+              <li><a id="ezUnfilledOrderlist" target="_self" href="ezUnfilledOrderlist">買賣旺未成交訂單關懷信查詢</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">型錄統計報表管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="authReportC01" target="_self" href="authReportC01">C01 會員類型與產業</a></li>
+              <li><a id="authReportC02" target="_self" href="authReportC02">C02 型錄產業與語系</a></li>
+              <li><a id="authReportC03" target="_self" href="authReportC03">C03 會員型錄</a></li>
+              <li><a id="authReportC04" target="_self" href="authReportC04">C04 型錄明細</a></li>
+              <li><a id="authReportC05" target="_self" href="authReportC05">C05 型錄異動統計</a></li>
+              <li><a id="authReportC08" target="_self" href="authReportC08">C08 近期無型錄異動的會員</a></li>
+              <li><a id="authReportC09" target="_self" href="authReportC09">C09 無上傳型錄EP會員</a></li>
+              <li><a id="authReportC10" target="_self" href="authReportC10">C10 審核不通過型錄的會員</a></li>
+              <li><a id="authReportC11" target="_self" href="authReportC11">C11 型錄認證統計</a></li>
+              <li><a id="authReportC12" target="_self" href="authReportC12">C12 型錄規格統計</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">商機統計報表管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="authReportA01" target="_self" href="authReportA01">A01 會員商機統計</a></li>
+              <li><a id="authReportA03" target="_self" href="authReportA03">A03 會員商機則數統計</a></li>
+              <li><a id="authReportA05" target="_self" href="authReportA05">A05 型錄商機排名統計</a></li>
+              <li><a id="authReportA06" target="_self" href="authReportA06">A06 商機進出貨統計</a></li>
+              <li><a id="authReportA10" target="_self" href="authReportA10">A10 每日商機數量統計</a></li>
+              <li><a id="authReportA11" target="_self" href="authReportA11">A11 買主實體商機統計</a></li>
+              <li><a id="authReportA12" target="_self" href="authReportA12">A12 供應商所收商機統計</a></li>
+              <li><a id="authReportA13" target="_self" href="authReportA13">A13 直接商機配對統計</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">影音統計報表管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="videoStatisticslist" target="_self" href="videoStatisticslist">影音統計匯出管理</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">會員統計報表管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="authReportB01" target="_self" href="authReportB01">B01 會員總數分析-預設</a></li>
+              <li><a id="authReportB03" target="_self" href="authReportB03">B03 會員總數分析-進階</a></li>
+              <li><a id="authReportB04" target="_self" href="authReportB04">B04 供應商會員分類</a></li>
+              <li><a id="authReportB06" target="_self" href="authReportB06">B06 停用會員名單</a></li>
+              <li><a id="authReportB08" target="_self" href="authReportB08">B08 會員產業統計</a></li>
+              <li><a id="authReportB09" target="_self" href="authReportB09">B09 新增會員數查詢</a></li>
+              <li><a id="authReportB10" target="_self" href="authReportB10">B10 客服介接報表</a></li>
+              <li><a id="authReportB11" target="_self" href="authReportB11">B11 會員登入</a></li>
+              <li><a id="authReportB13" target="_self" href="authReportB13">B13 會員啟用</a></li>
+              <li><a id="authReportB16" target="_self" href="authReportB16">B16 版型分析</a></li>
+              <li><a id="authReportB17" target="_self" href="authReportB17">B17 各項功能使用情形</a></li>
+              <li><a id="reportmember85" target="_self" href="reportmember85">會員功能使用調查表</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">網站管理報表</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="reportmaintain2" target="_self" href="reportmaintain2">訂閱統計報表</a></li>
+              <li><a id="reportmaintain5" target="_self" href="reportmaintain5">網站流量報表</a></li>
+              <li><a id="reportmaintain6" target="_self" href="reportmaintain6">廣告報表</a></li>
+              <li><a id="reportmaintain8" target="_self" href="reportmaintain8">搜尋關鍵字統計</a></li>
+              <li><a id="reportmaintain90" target="_self" href="reportmaintain90">主機使用數量統計</a></li>
+              <li><a id="reportmaintain91" target="_self" href="reportmaintain91">新聞點閱次數統計報表</a></li>
+            </ul>
+          </li> <!-- no child -->
+          <li><a id="reportRequestLoglist" target="_self" href="reportRequestLoglist"> <span class="hidden-xs">
+                報表-匯出記錄查詢</span></a></li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">搜尋引擎管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="idolWeightlist" target="_self" href="idolWeightlist">權重設定</a></li>
+              <li><a id="idolSortlist" target="_self" href="idolSortlist">排序設定</a></li>
+              <li><a id="idolRecommendSortlist" target="_self" href="idolRecommendSortlist">推薦元件排序設定</a></li>
+              <li><a id="keywordsynonymlist" target="_self" href="keywordsynonymlist">同義詞管理</a></li>
+              <li><a id="idolSynonymList" target="_self" href="idolSynonymList">同義詞管理2021</a></li>
+              <li><a id="hotKeywordinitShow" target="_self" href="hotKeywordinitShow">熱門關鍵字管理</a></li>
+              <li><a id="idolProductQmslist" target="_self" href="idolProductQmslist">產品置頂管理</a></li>
+              <li><a id="skabmlist" target="_self" href="skabmlist">搜尋框關鍵字置頂與黑名單</a></li>
+              <li><a id="skmlist" target="_self" href="skmlist">搜尋框關鍵字管理</a></li>
+              <li><a id="idolQmslist" target="_self" href="idolQmslist">置頂管理</a></li>
+              <li><a id="chIdolQmslist" target="_self" href="chIdolQmslist">置頂管理2021</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">介接系統報表</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="authReportA1" target="_self" href="authReportA1">介接報表A1</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">交易統計報表管理</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="authReportD01" target="_self" href="authReportD01">D01 銷售統計報表</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">展別管理(site)</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="siteDomainlist" target="_self" href="siteDomainlist">展別設定</a></li>
+            </ul>
+          </li>
+          <!-- have child -->
+          <li class="dropdown"><a href="#" class="dropdown-toggle"> <span class="hidden-xs">資料集管理(site)</span></a>
+            <ul class="dropdown-menu">
+              <li><a id="siteProductlist" target="_self" href="siteProductlist">產品型錄設定</a></li>
+              <li><a id="siteNewslist " target="_self" href="siteNewslist ">新聞設定</a></li>
+              <li><a id="siteEventlist" target="_self" href="siteEventlist">活動設定</a></li>
+            </ul>
+          </li>
+        </ul>
+        <script type="text/javascript">
+          //從session找要展開的menu
+          var reFreshMenuUrl = 'dashboard';
+          if (reFreshMenuUrl.length) {
+            $('#left_menu a#' + reFreshMenuUrl).closest('ul').css(
+              'display', 'block');
+          }
+        </script>
+      </div>
+
+      <div id="content" class="col-xs-12 col-sm-10">
+        <div class="row">
+					<div id="breadcrumb" class="col-xs-12">
+            <input type="hidden" id="menu_size" value="30">
+						<a href="#" class="show-sidebar"><i class="fa fa-bars" style="color: #9B9B9B"></i></a>
+						<ol class="breadcrumb pull-left">
+							<li><a href="dashboard">Home</a></li>
+							<li><a href="xxx">XXX</a></li>
+						</ol>
+					</div>
+				</div>
+      </div>
+    
+
+    </div>
+  </div>
+
+</body>
+
+</html>
