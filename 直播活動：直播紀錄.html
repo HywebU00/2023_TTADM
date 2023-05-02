@@ -53,6 +53,7 @@
   <script type="text/javascript" src="//js01.ttstaging.com.tw/codeMeta/codeMeta-tw.js"></script>
 
   <link rel="stylesheet" href="css/style2023.css">
+  <script src="js/uieffect.js"></script>
 
 </head>
 
@@ -504,7 +505,6 @@
 					</div>
 				</div>
 
-
         <hgroup class="headerGroup">
           <h3>直播紀錄</h3>
           <div class="btnGroup">
@@ -512,13 +512,240 @@
           </div>
         </hgroup>
 
-        <section class="">
-        </section>
+        <div class="tabSet">
+					<div class="tabItems">
+						<button class="active" type="button">紀錄總覽</button>
+						<button type="button">聊天紀錄</button>
+					</div>
+					<div class="tabContentGroup">
+						<div class="tabContent" title="紀錄總覽">
+              <section class="field">
+                <div class="fieldName">直播資料</div>
+                <table class="formLayout">
+                  <tr>
+                    <th>直播ID</th>
+                    <td><div class="noneInput">15843</div></td>
+                    <th>直播日期時間</th>
+                    <td><div class="noneInput">2023/4/1 10:00 ~ 10:25</div></td>
+                  </tr>
+                  <tr>
+                    <th>直播廠商</th>
+                    <td colspan="3">
+                      <div class="compInfo">
+                        <ul>
+                          <li>統一編號：16541333</li>
+                          <li>公司名稱(中/英)：凌網科技股份有限公司/HYWEB TECHNOLOGY CO., LTD.</li>
+                          <li>公司聯絡人：劉佳淇 / liucc@hyweb.com.tw / 03-5601296#3379</li>
+                          <li>會員類型：EP</li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>直播標題</th>
+                    <td colspan="3"><input type="text" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"></td>
+                  </tr>
+                </table>
+              </section>
+              <section class="field">
+                <div class="fieldName">直播數據</div>
+                <section class="briefCards">
+                  <ul>
+                    <li><span class="term">直播總瀏覽數</span> <span class="data"><em>297</em>人</span></li>
+                    <li><span class="term">最高同時瀏覽數</span> <span class="data"><em>8888</em>人</span></li>
+                    <li><span class="term">直播中商機 Inquiry</span> <span class="data">N/A</span></li>
+                    <li><span class="term">直播中商品 Buy Now</span> <span class="data">N/A</span></li>
+                    <li><span class="term">直播聊天互動數</span> <span class="data"><em>78</em></span></li>
+                    <li><span class="term">登入互動買主人數</span> <span class="data"><em>14</em>人</span></li>
+                  </ul>
+                </section>
+                <div class="fullWidthChart">
+                  <div class="title">直播中每分鐘在線人數(線圖)</div>
+                  <figure class="chart">
+                    <img style="display: block; width: 100%;" src="publicData/fakeChart01.png" alt="模擬統計圖表的假圖，套版時請刪除">
+                  </figure>
+                </div>
+              </section>
+              <section class="field">
+                <div class="fieldName">互動買主清單</div>
+                <div class="tableAndChart">
+                  <div class="list">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>會員帳號</th>
+                          <th>會員姓名</th>
+                          <th>公司名稱</th>
+                          <th>國家</th>
+                          <th>本次留言數</th>
+                          <th>加入日期</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>liucc910@gmail.com</td>
+                          <td>Liu Chia Chi</td>
+                          <td style="text-align: left;">HYWEB TECHNOLOGY CO., LTD.</td>
+                          <td>日本</td>
+                          <td class="number">4</td>
+                          <td><time>2019/01/01</time></td>
+                        </tr>
+                        <tr>
+                          <td>liucc910@gmail.com</td>
+                          <td>Vulputate</td>
+                          <td style="text-align: left;">TINCIDUNT VITAE SEMPER CO., LTD.</td>
+                          <td>日本</td>
+                          <td class="number">12</td>
+                          <td><time>2022/12/31</time></td>
+                        </tr>
+                        <tr>
+                          <td>Sapien@gmail.com</td>
+                          <td>Sapien Et</td>
+                          <td style="text-align: left;">TINCIDUNT VITAE SEMPER QUIS LECTUS</td>
+                          <td>日本</td>
+                          <td class="number">7</td>
+                          <td><time>2022/12/31</time></td>
+                        </tr>
+                        <tr>
+                          <td>pellentesque@gmail.com</td>
+                          <td>Pellen Tesque</td>
+                          <td style="text-align: left;">NULLA AT VOLUTPAT DIAM. SEMPER QUIS</td>
+                          <td>日本</td>
+                          <td class="number">21</td>
+                          <td><time>2022/12/31</time></td>
+                        </tr>
+                        <tr>
+                          <td>habitant@gmail.com</td>
+                          <td>Habitant Morbi</td>
+                          <td style="text-align: left;">LECTUS NULLA AT VOLUTPAT DIAM UT.</td>
+                          <td>紐西蘭</td>
+                          <td class="number">99</td>
+                          <td><time>2022/12/31</time></td>
+                        </tr>
+                        <tr>
+                          <td>morbi1695@gmail.com</td>
+                          <td>Fermentum Tristique</td>
+                          <td style="text-align: left;">QUIS BLANDIT PLATEA DICTUMST.</td>
+                          <td>越南</td>
+                          <td class="number">2</td>
+                          <td><time>2022/12/31</time></td>
+                        </tr>
+                        <tr>
+                          <td>tristiqueAmet@gmail.com</td>
+                          <td>Senectus Magna</td>
+                          <td style="text-align: left;">FAUCIBUS IN VIVERRA ORCI SAGITTIS.</td>
+                          <td>日本</td>
+                          <td class="number">6</td>
+                          <td><time>2022/12/31</time></td>
+                        </tr>
+                        <tr>
+                          <td>senectus@gmail.com</td>
+                          <td>Netus Aliquet Nibh</td>
+                          <td style="text-align: left;">SCELERISQUE IN DICTUM NON CONSECTETUR A ERAT NAM AT.</td>
+                          <td>義大利</td>
+                          <td class="number">41</td>
+                          <td><time>2022/12/31</time></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <figure class="chart">
+                    <div id="pie1" data-highcharts-chart="2" aria-hidden="false" role="region" aria-label="Chart. Highcharts interactive chart." style="overflow: hidden;"><div id="highcharts-screen-reader-region-before-2" aria-hidden="false" style="position: relative;"><div aria-hidden="false" style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;"><p>Chart</p><div>Pie chart with 6 slices.</div><div><button id="hc-linkto-highcharts-data-table-2" tabindex="-1" aria-expanded="false">View as data table, Chart</button></div></div></div><div aria-hidden="false" class="highcharts-announcer-container" style="position: relative;"><div aria-hidden="false" aria-live="polite" style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;"></div><div aria-hidden="false" aria-live="assertive" style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;"></div><div aria-hidden="false" aria-live="polite" style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;"></div></div><div id="highcharts-sbd01j6-45" dir="ltr" class="highcharts-container " aria-hidden="false" tabindex="0" style="position: relative; overflow: hidden; width: 423px; height: 400px; text-align: left; line-height: normal; z-index: 0; touch-action: manipulation; outline: currentcolor;"><div aria-hidden="false" class="highcharts-a11y-proxy-container-before" style="top: 0px; left: 0px; white-space: nowrap; position: absolute;"></div><svg version="1.1" class="highcharts-root" style="font-family: Helvetica, Arial, sans-serif; font-size: 1rem;" xmlns="http://www.w3.org/2000/svg" width="423" height="400" viewBox="0 0 423 400" aria-hidden="false" aria-label="Interactive chart"><desc aria-hidden="true">Created with Highcharts 11.0.0</desc><defs aria-hidden="true"><filter id="drop-shadow"><feDropShadow dx="1" dy="1" flood-color="#000000" flood-opacity="0.75" stdDeviation="2.5"></feDropShadow></filter><clipPath id="highcharts-sbd01j6-52-"><rect x="0" y="0" width="403" height="337" fill="none"></rect></clipPath></defs><rect fill="#ffffff" class="highcharts-background" filter="none" x="0" y="0" width="423" height="400" rx="0" ry="0" aria-hidden="true"></rect><rect fill="none" class="highcharts-plot-background" x="10" y="10" width="403" height="337" filter="none" aria-hidden="true"></rect><g class="highcharts-pane-group" data-z-index="0" aria-hidden="true"></g><rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="10" y="10" width="403" height="337" aria-hidden="true"></rect><g class="highcharts-series-group" data-z-index="3" filter="none" aria-hidden="false"><g class="highcharts-series highcharts-series-0 highcharts-pie-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" filter="none" aria-hidden="false" clip-path="none" style="cursor: pointer;"><path fill="#2caffe" d="M 201.4683347114538 13.028944824737579 A 3 3 0 0 1 204.52560155564566 10.028880438022782 A 158.5 158.5 0 1 1 99.76659197473286 290.04243576448727 A 3 3 0 0 1 99.4292348030805 285.7723705401887 L 201.5 168.5 A 0 0 0 0 1 201.5 168.5 A 0 0 0 1 0 201.5 168.5 A 0 0 0 0 1 201.5 168.5 Z" transform="translate(9,4)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-point-select highcharts-color-0" tabindex="-1" role="img" aria-label="日本, 61.41%. Brands." style="outline: currentcolor;"></path><path fill="#544fc5" d="M 99.31201348746406 285.6702411558232 A 3 3 0 0 1 95.03598173179891 285.9208789533963 A 158.5 158.5 0 0 1 44.335107850757595 189.02916646425297 A 3 3 0 0 1 46.978735611097875 185.65892921061825 L 201.5 168.5 A 0 0 0 0 1 201.5 168.5 A 0 0 0 0 0 201.5 168.5 A 0 0 0 0 1 201.5 168.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-1" tabindex="-1" role="img" aria-label="台灣, 11.84%. Brands." style="outline: currentcolor;"></path><path fill="#00e272" d="M 46.96165394537286 185.50439939251902 A 3 3 0 0 1 43.64575623906222 182.79292575585703 A 158.5 158.5 0 0 1 66.46719966975257 85.5036577012485 A 3 3 0 0 1 70.64295039139199 84.54952312386605 L 201.5 168.5 A 0 0 0 0 1 201.5 168.5 A 0 0 0 0 0 201.5 168.5 A 0 0 0 0 1 201.5 168.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-2" tabindex="-1" role="img" aria-label="美國, 10.85%. Brands." style="outline: currentcolor;"></path><path fill="#fe6a35" d="M 70.72696628279573 84.41870807130192 A 3 3 0 0 1 69.85776421301543 80.2244554986832 A 158.5 158.5 0 0 1 96.31205354135524 49.93463440020402 A 3 3 0 0 1 100.5851247243395 50.23150060942737 L 201.5 168.5 A 0 0 0 0 1 201.5 168.5 A 0 0 0 0 0 201.5 168.5 A 0 0 0 0 1 201.5 168.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-3" tabindex="-1" role="img" aria-label="韓國, 4.67%. Brands." style="outline: currentcolor;"></path><path fill="#6b8abc" d="M 100.70344366145213 50.13064488521559 A 3 3 0 0 1 101.08695964861394 45.864477709796844 A 158.5 158.5 0 0 1 130.61165881288005 26.735783486316706 A 3 3 0 0 1 134.6620145225919 28.129299006802057 L 201.5 168.5 A 0 0 0 0 1 201.5 168.5 A 0 0 0 0 0 201.5 168.5 A 0 0 0 0 1 201.5 168.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-4" tabindex="-1" role="img" aria-label="中國, 4.18%. Brands." style="outline: currentcolor;"></path><path fill="#d568fb" d="M 134.80241861918 28.062531217808953 A 3 3 0 0 1 136.277838670838 24.041287311727842 A 158.5 158.5 0 0 1 198.22201279089205 10.033900155721255 A 3 3 0 0 1 201.2840538189317 13.02909157258108 L 201.5 168.5 A 0 0 0 0 1 201.5 168.5 A 0 0 0 0 0 201.5 168.5 A 0 0 0 0 1 201.5 168.5 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-5" tabindex="-1" role="img" aria-label="其他, 7.05%. Brands." style="outline: currentcolor;"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-pie-series" data-z-index="0.1" opacity="1" transform="translate(10,10) scale(1 1)" aria-hidden="true" clip-path="none"></g></g><g class="highcharts-exporting-group" data-z-index="3" aria-hidden="true"><g class="highcharts-no-tooltip highcharts-button highcharts-contextbutton" stroke-linecap="round" transform="translate(385,10)" style="cursor: pointer;"><title>Chart context menu</title><rect fill="#ffffff" class="highcharts-button-box" x="0.5" y="0.5" width="28" height="28" rx="2" ry="2" stroke="none" stroke-width="1"></rect><path fill="#666666" d="M 8 9.5 L 22 9.5 M 8 14.5 L 22 14.5 M 8 19.5 L 22 19.5" class="highcharts-button-symbol" data-z-index="1" stroke="#666666" stroke-width="3"></path><text x="0" data-z-index="1" y="17.5" style="color: rgb(51, 51, 51); font-size: 0.8em; font-weight: normal; fill: rgb(51, 51, 51);"></text></g></g><text x="212" text-anchor="middle" class="highcharts-title" data-z-index="4" y="19" aria-hidden="true" style="color: rgb(51, 51, 51); font-size: 1.2em; font-weight: bold; fill: rgb(51, 51, 51);"></text><text x="212" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" y="21" aria-hidden="true" style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" y="394" aria-hidden="true" style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);"></text><g class="highcharts-legend highcharts-no-tooltip" data-z-index="7" transform="translate(43,359)" aria-hidden="true"><rect fill="none" class="highcharts-legend-box" rx="0" ry="0" stroke="#999999" stroke-width="0" filter="none" x="0" y="0" width="338" height="26"></rect><g data-z-index="1"><g><g class="highcharts-legend-item highcharts-pie-series highcharts-color-0" data-z-index="1" transform="translate(8,3)"><text x="21" text-anchor="start" data-z-index="2" y="13" style="color: rgb(51, 51, 51); cursor: pointer; font-size: 0.8em; text-decoration: none; fill: rgb(51, 51, 51);">日本</text><rect x="4" y="6" rx="4" ry="4" width="8" height="8" fill="#2caffe" class="highcharts-point" data-z-index="3"></rect></g><g class="highcharts-legend-item highcharts-pie-series highcharts-color-1" data-z-index="1" transform="translate(65,3)"><text x="21" y="13" text-anchor="start" data-z-index="2" style="color: rgb(51, 51, 51); cursor: pointer; font-size: 0.8em; text-decoration: none; fill: rgb(51, 51, 51);">台灣</text><rect x="4" y="6" rx="4" ry="4" width="8" height="8" fill="#544fc5" class="highcharts-point" data-z-index="3"></rect></g><g class="highcharts-legend-item highcharts-pie-series highcharts-color-2" data-z-index="1" transform="translate(122,3)"><text x="21" y="13" text-anchor="start" data-z-index="2" style="color: rgb(51, 51, 51); cursor: pointer; font-size: 0.8em; text-decoration: none; fill: rgb(51, 51, 51);">美國</text><rect x="4" y="6" rx="4" ry="4" width="8" height="8" fill="#00e272" class="highcharts-point" data-z-index="3"></rect></g><g class="highcharts-legend-item highcharts-pie-series highcharts-color-3" data-z-index="1" transform="translate(179,3)"><text x="21" y="13" text-anchor="start" data-z-index="2" style="color: rgb(51, 51, 51); cursor: pointer; font-size: 0.8em; text-decoration: none; fill: rgb(51, 51, 51);">韓國</text><rect x="4" y="6" rx="4" ry="4" width="8" height="8" fill="#fe6a35" class="highcharts-point" data-z-index="3"></rect></g><g class="highcharts-legend-item highcharts-pie-series highcharts-color-4" data-z-index="1" transform="translate(236,3)"><text x="21" y="13" text-anchor="start" data-z-index="2" style="color: rgb(51, 51, 51); cursor: pointer; font-size: 0.8em; text-decoration: none; fill: rgb(51, 51, 51);">中國</text><rect x="4" y="6" rx="4" ry="4" width="8" height="8" fill="#6b8abc" class="highcharts-point" data-z-index="3"></rect></g><g class="highcharts-legend-item highcharts-pie-series highcharts-color-5" data-z-index="1" transform="translate(293,3)"><text x="21" y="13" text-anchor="start" data-z-index="2" style="color: rgb(51, 51, 51); cursor: pointer; font-size: 0.8em; text-decoration: none; fill: rgb(51, 51, 51);">其他</text><rect x="4" y="6" rx="4" ry="4" width="8" height="8" fill="#d568fb" class="highcharts-point" data-z-index="3"></rect></g></g></g></g><text x="413" class="highcharts-credits" text-anchor="end" data-z-index="8" y="395" aria-label="Chart credits: Highcharts.com" aria-hidden="false" style="cursor: pointer; color: rgb(153, 153, 153); font-size: 0.6em; fill: rgb(153, 153, 153);">Highcharts.com</text><g class="highcharts-label highcharts-tooltip highcharts-color-0" data-z-index="8" filter="url(#drop-shadow)" transform="translate(184,168)" opacity="0" aria-hidden="true" style="cursor: default; pointer-events: none;" visibility="hidden"><path fill="#ffffff" class="highcharts-label-box highcharts-tooltip-box" d="M 3 0 L 65 0 A 3 3 0 0 1 68 3 L 68 32 A 3 3 0 0 1 65 35 L 3 35 A 3 3 0 0 1 0 32 L 0 3 A 3 3 0 0 1 3 0 Z" stroke-width="0" stroke="#2caffe"></path><text x="8" data-z-index="1" y="15" style="color: rgb(51, 51, 51); font-size: 0.8em; fill: rgb(51, 51, 51);"><tspan style="font-size: 0.8em;">日本</tspan><tspan class="highcharts-br" dy="11" x="8">​</tspan>Brands: <tspan style="font-weight: bold;">61.4%</tspan></text></g></svg><div aria-hidden="false" class="highcharts-a11y-proxy-container-after" style="top: 0px; left: 0px; white-space: nowrap; position: absolute;"><div class="highcharts-a11y-proxy-group highcharts-a11y-proxy-group-zoom"></div><div class="highcharts-a11y-proxy-group highcharts-a11y-proxy-group-legend" aria-label="Toggle series visibility, Chart" role="region"><ul role="list"><li style="list-style: none;"><button class="highcharts-a11y-proxy-button" aria-label="Show 日本" tabindex="-1" aria-pressed="true" style="border-width: 0px; background-color: transparent; cursor: pointer; outline: currentcolor; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 33px; height: 9.015625px; left: 55px; top: 368px;"></button></li><li style="list-style: none;"><button class="highcharts-a11y-proxy-button" aria-label="Show 台灣" tabindex="-1" aria-pressed="true" style="border-width: 0px; background-color: transparent; cursor: pointer; outline: currentcolor; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 33px; height: 9.015625px; left: 112px; top: 368px;"></button></li><li style="list-style: none;"><button class="highcharts-a11y-proxy-button" aria-label="Show 美國" tabindex="-1" aria-pressed="true" style="border-width: 0px; background-color: transparent; cursor: pointer; outline: currentcolor; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 33px; height: 9.015625px; left: 169px; top: 368px;"></button></li><li style="list-style: none;"><button class="highcharts-a11y-proxy-button" aria-label="Show 韓國" tabindex="-1" aria-pressed="true" style="border-width: 0px; background-color: transparent; cursor: pointer; outline: currentcolor; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 33px; height: 9.015625px; left: 226px; top: 368px;"></button></li><li style="list-style: none;"><button class="highcharts-a11y-proxy-button" aria-label="Show 中國" tabindex="-1" aria-pressed="true" style="border-width: 0px; background-color: transparent; cursor: pointer; outline: currentcolor; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 33px; height: 9.015625px; left: 283px; top: 368px;"></button></li><li style="list-style: none;"><button class="highcharts-a11y-proxy-button" aria-label="Show 其他" tabindex="-1" aria-pressed="true" style="border-width: 0px; background-color: transparent; cursor: pointer; outline: currentcolor; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 33px; height: 9.015625px; left: 340px; top: 368px;"></button></li></ul></div><div class="highcharts-a11y-proxy-group highcharts-a11y-proxy-group-chartMenu"><button class="highcharts-a11y-proxy-button highcharts-no-tooltip" aria-label="View chart menu, Chart" aria-expanded="false" title="Chart context menu" style="border-width: 0px; background-color: transparent; cursor: pointer; outline: currentcolor; opacity: 0.001; z-index: 999; overflow: hidden; padding: 0px; margin: 0px; display: block; position: absolute; width: 28.5px; height: 28.5px; left: 385px; top: 10px;"></button></div></div></div><div id="highcharts-screen-reader-region-after-2" aria-hidden="false" style="position: relative;"><div aria-hidden="false" style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;"><div id="highcharts-end-of-chart-marker-2" class="highcharts-exit-anchor" tabindex="0" aria-hidden="false">End of interactive chart.</div></div></div></div>
+                  </figure>
+                </div>
+              </section>
+						</div>
+						<div class="tabContent" title="聊天紀錄">
+              <section class="field">
+                <div class="fieldName">直播聊天紀錄</div>
+                <div class="list">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>留言編號</th>
+                        <th>留言時間</th>
+                        <th>留言內容</th>
+                        <th>留言姓名</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>15843</td>
+                        <td><time>2022/3/3</time> <time>17:20:21</time></td>
+                        <td style="text-align:left">(留言內容)Taiwantrade ICT: Taiwantrade ICT Virtual Pavilion online. Taiwantrade ICT: Taiwantrade ICT Virtual
+                          Pavilion online</td>
+                        <td>liucc</td>
+                      </tr>
+                      <tr>
+                        <td>15842</td>
+                        <td><time>2022/2/1</time> <time>09:20:21</time></td>
+                        <td style="text-align:left">(活動標題)Taiwantrade ICT: Taiwantrade ICT Virtual Pavilion online</td>
+                        <td>liucc@hyweb.com.tw</td>
+                      </tr>
+                      <tr>
+                        <td>15841</td>
+                        <td><time>2022/3/30</time><time> 17:20:21</time></td>
+                        <td style="text-align:left">(活動標題-單獨一家)Taiwantrade ICT: Taiwantrade ICT Virtual Pavilion online</td>
+                        <td>Augue Eget</td>
+                      </tr>
+                      <tr>
+                        <td>15843</td>
+                        <td><time>2022/3/3</time> <time>17:20:21</time></td>
+                        <td style="text-align:left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                        <td>Arcu Dictum Varius Duis</td>
+                      </tr>
+                      <tr>
+                        <td>15842</td>
+                        <td><time>2022/2/1</time> <time>09:20:21</time></td>
+                        <td style="text-align:left">Ut nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                        <td>Consectetur Lorem</td>
+                      </tr>
+                      <tr>
+                        <td>15841</td>
+                        <td><time>2022/3/30</time> <time>17:20:21</time></td>
+                        <td style="text-align:left">Duis aute irure dolor in reprehenderit</td>
+                        <td>Senectus Amet</td>
+                      </tr>
+                      <tr>
+                        <td>15841</td>
+                        <td><time>2022/3/30</time> <time>17:20:21</time></td>
+                        <td style="text-align:left">Scelerisque mauris pellentesque pulvinar pellentesque. Pellentesque adipiscing commodo elit at.</td>
+                        <td>Donec Amet Cursus</td>
+                      </tr>
+                      <tr>
+                        <td>15843</td>
+                        <td><time>2022/3/3</time> <time>17:20:21</time></td>
+                        <td style="text-align:left">Voluptate velit esse cillum dolore eu fugiat nulla pariatur.</td>
+                        <td>Morbi Tristique</td>
+                      </tr>
+                      <tr>
+                        <td>15842</td>
+                        <td><time>2022/2/1</time> <time>09:20:21</time></td>
+                        <td style="text-align:left">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                        <td>Sit Dictumit Ametjusto</td>
+                      </tr>
+                      <tr>
+                        <td>15841</td>
+                        <td><time>2022/3/30</time> <time>17:20:21</time></td>
+                        <td style="text-align:left">Ipsum dolor sit amet consectetur adipiscing.</td>
+                        <td>Excepteur Donec</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- 分頁 -->
+                <div id="gridpager" class="ui-state-default ui-jqgrid-pager ui-corner-bottom" dir="ltr"><div id="pg_gridpager" class="ui-pager-control" role="group"><table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table" style="width:100%;table-layout:fixed;height:100%;" role="row"><tbody><tr><td id="gridpager_left" align="left"></td><td id="gridpager_center" align="center" style="white-space: pre; width: 276px;"><table cellspacing="0" cellpadding="0" border="0" style="table-layout:auto;" class="ui-pg-table"><tbody><tr><td id="first_gridpager" class="ui-pg-button ui-corner-all" style="cursor: default;"><span class="ui-icon ui-icon-seek-first"></span></td><td id="prev_gridpager" class="ui-pg-button ui-corner-all" style="cursor: default;"><span class="ui-icon ui-icon-seek-prev"></span></td><td class="ui-pg-button ui-state-disabled" style="width: 4px; cursor: default;"><span class="ui-separator"></span></td><td dir="ltr"> <input class="ui-pg-input" type="text" size="2" maxlength="7" value="1" role="textbox"> 共 <span id="sp_1_gridpager">4</span> 頁</td><td class="ui-pg-button ui-state-disabled" style="width: 4px; cursor: default;"><span class="ui-separator"></span></td><td id="next_gridpager" class="ui-pg-button ui-corner-all" style="cursor: default;"><span class="ui-icon ui-icon-seek-next"></span></td><td id="last_gridpager" class="ui-pg-button ui-corner-all" style="cursor: default;"><span class="ui-icon ui-icon-seek-end"></span></td><td dir="ltr"><select class="ui-pg-selbox" role="listbox"><option role="option" value="10" selected="selected">10</option><option role="option" value="20">20</option><option role="option" value="30">30</option></select></td></tr></tbody></table></td><td id="gridpager_right" align="right"><div dir="ltr" style="text-align:right" class="ui-paging-info">21 - 30 共 39 條</div></td></tr></tbody></table></div></div>
 
-    
-
+              </section>
+						</div>
+					</div>
+				</div>
+      </div>
     </div>
   </div>
+
+
+
 
 </body>
 

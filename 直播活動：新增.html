@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>新增直播活動</title>
+  <title>直播活動：新增</title>
 
   <link rel="stylesheet" href="devoopsv2/plugins/bootstrap/bootstrap.min.css">
   <!-- <link rel="stylesheet" href="css/classic.css" /> -->
@@ -53,6 +53,7 @@
   <script type="text/javascript" src="//js01.ttstaging.com.tw/codeMeta/codeMeta-tw.js"></script>
 
   <link rel="stylesheet" href="css/style2023.css">
+  <script src="js/uieffect.js"></script>
 
 </head>
 
@@ -549,13 +550,17 @@
                   <th><label class="required">設定產業別</label></th>
                   <td colspan="3">
                     <div class="selectionSet">
-                      <div class="selected">
-                        <label><input type="checkbox">Medical &amp; Health</label>
-                        <label><input type="checkbox">Beauty &amp; Personal Care</label>
-                        <label><input type="checkbox">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</label>
+                      <div class="checkOptions">
+                        <div class="option"><input type="checkbox">Beauty &amp; Personal Care -- 美容及個人用品</div>
+                        <div class="option"><input type="checkbox">Agricultural &amp; Foods -- 農產及食品</div>
+                        <div class="option"><input type="checkbox">Apparel &amp; Accessories -- 服飾及配件</div>
+                        <!-- <div class="option"><input type="checkbox">Packaging, Printing &amp; Advertising -- 包裝、印刷及廣告</div>
+                        <div class="option"><input type="checkbox">Bicycles -- 自行車</div>
+                        <div class="option"><input type="checkbox">Chemicals -- 化學品</div>
+                        <div class="option"><input type="checkbox">Textile &amp; Leather -- 紡織及皮革</div> -->
                       </div>
-                      <button type="button" class="btn btn-info">選取</button>
-                      <button type="button" class="btn btn-danger">移除</button>
+                      <button type="button" class="btn btn-info">移除勾選項</button>
+                      <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx03">選取</button>
                     </div>
                   </td>
                 </tr>
@@ -612,8 +617,8 @@
                           </div>
                           <div class="inlineForm">
                             <input type="text">
-                            <button type="button" class="btn btn-info">選擇廠商</button> 
-                            <button type="button" class="btn btn-info">編修資料</button>
+                            <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx01">選擇廠商</button> 
+                            <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx02">編修資料</button>
                           </div>
                           <div class="optionPool">
                             <label><input type="radio" name="bbbb" checked>現場直播</label>
@@ -629,8 +634,8 @@
                           </div>
                           <div class="inlineForm">
                             <input type="text">
-                            <button type="button" class="btn btn-info" disabled>選擇廠商</button> 
-                            <button type="button" class="btn btn-info">編修資料</button>
+                            <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx01">選擇廠商</button> 
+                            <button type="button" class="btn btn-info" disabled>編修資料</button>
                           </div>
                           <div class="optionPool">
                             <label><input type="radio" name="cccc" checked>現場直播</label>
@@ -675,7 +680,7 @@
             <div class="btnDv">
               <button type="button" class="btn btn-primary">發布</button>
               <button type="button" class="btn btn-primary">儲存</button>
-              <button type="button" class="btn btn-danger">重設</button>
+              <button type="button" class="btn btn-info">重設</button>
             </div>          
           </form>
         </section>
@@ -685,83 +690,9 @@
     </div>
   </div>
 
-  <!-- 編修報名直播資訊 -->
-  <div class="ligbtbox" style="display:none;">
-    <button type="button" class="closeThis"></button>
-    <div class="lbxHeader">編修報名直播資訊</div>
-    <section class="formA">
-      <form action="">
-        <table class="formLayout">
-          <caption>活動資料</caption>
-          <tr>
-            <td>直播供應商設定</td>
-            <td>
-              <div class="inlineForm">
-                <input type="text" class="taxIDnumber" placeholder="輸入統一編號">
-                <button type="button" class="btn btn-info">取得廠商資訊</button>
-                <input type="text" readonly="readonly">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>直播標題</td>
-            <td><input type="text"></td>
-          </tr>
-          <tr>
-            <td>直播內容簡介</td>
-            <td>
-              <textarea></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td>直播封面</td>
-            <td><input type="file"></td>
-          </tr>
-          <tr>
-            <td>直播聯絡人/聯絡電話</td>
-            <td>
-              <div class="namePhoneSet">
-                <input type="text" value="">
-                <input type="tel" value="">
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>直播產品設定</td>
-            <td>
-              <div class="liveDeliveryPdSet">
-                <ol>
-                  <li>
-                    <span class="numb">1</span>
-                    <input type="text" class="pdIDNumber" value="" placeholder="輸入產品ID">
-                    <button type="button" class="btn btn-info">取得產品資訊</button>
-                    <input type="text" class="pdDescription" readonly>
-                    <button type="button" class="btn btn-danger">移除</button>
-                  </li>
-                  <li>
-                    <span class="numb">2</span>
-                    <input type="text" class="pdIDNumber" value="" placeholder="輸入產品ID">
-                    <button type="button" class="btn btn-info">取得產品資訊</button>
-                    <input type="text"  class="pdDescription" readonly>
-                    <button type="button" class="btn btn-danger">移除</button>
-                  </li>
-                </ol>
-                <button type="button" class="btn btn-info">新增產品</button>
-              </div>
-            </td>
-          </tr>
-        </table>
-        <div class="btnDv">
-          <button type="submit" class="btn btn-primary">確定選入</button>
-          <button type="reset" class="btn btn-warning">取消</button>
-        </div>
-      </form>
-    </section>
-  </div>
-
-
+  <!-- 燈箱 -->
   <!-- 選擇報名廠商 -->
-  <div class="ligbtbox" style="display: none;">
+  <div class="lightbox"  data-lbxid="lbx01">
     <button type="button" class="closeThis"></button>
     <div class="lbxHeader">選擇報名廠商</div>
 
@@ -1040,11 +971,137 @@
 
       <div class="btnDv">
         <button type="submit" class="btn btn-primary">確定選入</button>
-        <button type="reset" class="btn btn-warning">取消</button>
+        <button type="reset" class="btn btn-info">取消</button>
       </div>
     </form>
   </div>
 
+  <!-- 編修報名直播資訊 -->
+  <div class="lightbox"  data-lbxid="lbx02">
+    <button type="button" class="closeThis"></button>
+    <div class="lbxHeader">編修報名直播資訊</div>
+    <section class="formA">
+      <form action="">
+        <table class="formLayout">
+          <caption>活動資料</caption>
+          <tr>
+            <td>直播供應商設定</td>
+            <td>
+              <div class="inlineForm">
+                <input type="text" class="taxIDnumber" placeholder="輸入統一編號">
+                <button type="button" class="btn btn-info">取得廠商資訊</button>
+                <input type="text" readonly="readonly">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>直播標題</td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>直播內容簡介</td>
+            <td>
+              <textarea></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>直播封面</td>
+            <td><input type="file"></td>
+          </tr>
+          <tr>
+            <td>直播聯絡人/聯絡電話</td>
+            <td>
+              <div class="namePhoneSet">
+                <input type="text" value="">
+                <input type="tel" value="">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>直播產品設定</td>
+            <td>
+              <div class="liveDeliveryPdSet">
+                <ol>
+                  <li>
+                    <span class="numb">1</span>
+                    <input type="text" class="pdIDNumber" value="" placeholder="輸入產品ID">
+                    <button type="button" class="btn btn-info">取得產品資訊</button>
+                    <input type="text" class="pdDescription" readonly>
+                    <button type="button" class="btn btn-danger">移除</button>
+                  </li>
+                  <li>
+                    <span class="numb">2</span>
+                    <input type="text" class="pdIDNumber" value="" placeholder="輸入產品ID">
+                    <button type="button" class="btn btn-info">取得產品資訊</button>
+                    <input type="text"  class="pdDescription" readonly>
+                    <button type="button" class="btn btn-danger">移除</button>
+                  </li>
+                </ol>
+                <button type="button" class="btn btn-info">新增產品</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="btnDv">
+          <button type="submit" class="btn btn-primary">儲存變更</button>
+          <button type="reset" class="btn btn-info">取消</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <!-- 選取產業別 -->
+  <div class="lightbox"  data-lbxid="lbx03">
+    <button type="button" class="closeThis"></button>
+    <div class="lbxHeader">選取產業別</div>
+
+    <div class="formA">
+      <form action="">
+        <section class="checkOptions alone">
+          <div class="option"><input type="checkbox">Agricultural &amp; Foods -- 農產及食品</div>
+          <div class="option"><input type="checkbox">Mineral &amp; Metallurgy -- 礦產及金屬材料</div>
+          <div class="option"><input type="checkbox">Chemicals -- 化學品</div>
+          <div class="option"><input type="checkbox">Beauty &amp; Personal Care -- 美容及個人用品</div>
+          <div class="option"><input type="checkbox">Textile &amp; Leather -- 紡織及皮革</div>
+          <div class="option"><input type="checkbox">Apparel &amp; Accessories -- 服飾及配件</div>
+          <div class="option"><input type="checkbox">Luggage, Bags &amp; Cases -- 箱包</div>
+          <div class="option"><input type="checkbox">Timepiece, Jewelry &amp; Eyewear -- 鐘錶、珠寶及眼鏡</div>
+          <div class="option"><input type="checkbox">Hardware -- 五金</div>
+          <div class="option"><input type="checkbox">Tools999 -- 工具</div>
+          <div class="option"><input type="checkbox">Machinery -- 機械</div>
+          <div class="option"><input type="checkbox">Mechanical Parts -- 機械零件</div>
+          <div class="option"><input type="checkbox">Electrical &amp; Electronics -- 電機及電子</div>
+          <div class="option"><input type="checkbox">Consumer Electronics -- 消費性電子</div>
+          <div class="option"><input type="checkbox">Home Appliances -- 家庭用電器</div>
+          <div class="option"><input type="checkbox">Lights &amp; Lighting -- 燈光及照明</div>
+          <div class="option"><input type="checkbox">Computer -- 電腦</div>
+          <div class="option"><input type="checkbox">Telecom Products -- 電信</div>
+          <div class="option"><input type="checkbox">Automobiles &amp; Motorcycles -- 汽機車</div>
+          <div class="option"><input type="checkbox">Bicycles -- 自行車</div>
+          <div class="option"><input type="checkbox">Aerospace -- 航太</div>
+          <div class="option"><input type="checkbox">Ships &amp; Boats -- 船舶</div>
+          <div class="option"><input type="checkbox">Security &amp; Protection -- 安全</div>
+          <div class="option"><input type="checkbox">Medical &amp; Health -- 醫療及保健</div>
+          <div class="option"><input type="checkbox">Measurement &amp; Analysis Instrument -- 量測及分析儀器</div>
+          <div class="option"><input type="checkbox">Construction -- 建材及衛浴設備</div>
+          <div class="option"><input type="checkbox">Furniture -- 家具</div>
+          <div class="option"><input type="checkbox">Houseware -- 家庭用品</div>
+          <div class="option"><input type="checkbox">Toys, Baby &amp; Pet Products -- 玩具、嬰幼兒及寵物用品</div>
+          <div class="option"><input type="checkbox">Sports -- 運動用品</div>
+          <div class="option"><input type="checkbox">Musical Instruments -- 樂器</div>
+          <div class="option"><input type="checkbox">Office &amp; School Supplies -- 辦公室及學校用品</div>
+          <div class="option"><input type="checkbox">Gifts &amp; Crafts -- 禮品及藝品</div>
+          <div class="option"><input type="checkbox">Packaging, Printing &amp; Advertising -- 包裝、印刷及廣告</div>
+          <div class="option"><input type="checkbox">Services -- 服務業</div>
+        </section>
+        <div class="btnDv">
+          <button type="submit" class="btn btn-primary">確定選入</button>
+          <button type="reset" class="btn btn-info">清除</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
 </body>
 
 </html>

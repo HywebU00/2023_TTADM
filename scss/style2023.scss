@@ -1,4 +1,6 @@
 $primBlue: #496a84;
+$primBlueDark: #3b4b5c;
+$primBlueBright: #3ea7cd;
 $focus: #2196F3;
 $note: #a9060b;
 
@@ -8,12 +10,23 @@ $borderColorPale: #e3e3e3;
 $borderColorDark: #888;
 
 $fontInvert: #fff;
+$fontDark: #111;
+
+$darkGray:#505559;
 $white: #fff;
 
-$trHover: #f1f6f9;
+$trHover: #eefbfc;
+$readonly: #f4f4f4;
+
+$sortArrow: #e61;
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+body.noScroll{ overflow: hidden; overflow-y:hidden; }
 
 
-// 表單排版用表格
+
+// 表單排版用表格 //////////////////////////////////////////////////
 table.formLayout{
   width: 100%; border-collapse: collapse;
   border: 1px solid $borderColor;
@@ -47,6 +60,39 @@ table.formLayout{
     background-color: $primBlue; color: $fontInvert;
   }
 
+
+  // 預設值或帶入的資料
+  .noneInput{
+    height: 2.3em; line-height: 2.3; padding: 0 .2em;
+  }
+  .note{
+    position: relative; padding-left: 1.2em; margin:.3em 0 0;
+    color: $note;
+    &::before{
+      content: '＊'; position: absolute; left: 0; top: 0;
+    }
+  }
+
+}
+
+// 新增、修改資料的表單 //////////////////////////////////////////////////
+.formA, .queryHere{
+  fieldset{
+    border-radius: 6px;overflow: hidden;border: 2px solid $primBlue; 
+    &+fieldset{margin-top: 10px;}
+    .formLayout{border: none;
+      tr:last-child{
+        th, td{border-bottom: none;}
+      }
+    }
+  }
+  legend{
+    border: none; border-radius: 6px 6px 0 0;
+    padding:10px 12px; margin: 0 -2px;width: calc(100% + 4px);
+    background-color: $primBlue; color: $fontInvert;
+    line-height: 1.2; font-size: 1.7rem;
+  }
+
   // 表單元件樣式
   input, textarea, select, button{ font-size: inherit;}
   input[type="text"],
@@ -65,14 +111,14 @@ table.formLayout{
   textarea,
   select{
     height: 2.3em; padding: 0 .6em;
-    background: #fff;box-shadow: $borderColor 0 0 0 1px;
+    background: $white;box-shadow: $borderColor 0 0 0 1px;
     border-radius: 3px;border: none;
 
     &:hover{box-shadow: $borderColor 0 0 0 1px;}
     &:focus{box-shadow: $focus 0 0 0 1px, $focus 0 0 6px;}
 
     &[readonly]{ 
-      background: #f4f4f4; cursor: default;
+      background: $readonly; cursor: default;
       &:focus{
         box-shadow: $borderColor 0 0 0 1px;
       }
@@ -84,56 +130,55 @@ table.formLayout{
     padding-top: .5em;height: 9.5em; line-height: 1.5; 
     resize: vertical;
   }
+
   button, input[type="button"], input[type="submit"], input[type="reset"] {
     height: 2.3em; line-height: 2.3; padding: 0 .5em;
     border-radius: 3px;border: none;
   }
 
-  // 預設值或帶入的資料
-  .noneInput{
-    height: 2.3em; line-height: 2.3; padding: 0 .2em;
+  // radio 和 checkbox 
+  input[type="radio"], input[type="checkbox"] {
+    -webkit-appearance: none; -moz-appearance: none; appearance: none;
+
+    margin:-1px 8px 0 4px; 
+    width: 1.2em; height: 1.2em; line-height: 1; 
+    border: 1px solid $borderColor;
+    vertical-align: middle;
+    transition: .1s;
   }
-  .note{
-    position: relative; padding-left: 1.2em; margin:.3em 0 0;
-    color: $note;
-    &::before{
-      content: '＊'; position: absolute; left: 0; top: 0;
+  input[type="radio"] {
+    border-radius: 50%;
+    &:focus, &:checked{
+      border-width: 2px; border-color: $white;
+      box-shadow:$primBlue 0 0 0 3px;
+      background-color: $primBlue;
     }
   }
-
-}
-
-// 新增、修改資料的表單
-.formA{
-  fieldset{
-    border-radius: 6px;overflow: hidden;border: 2px solid $primBlue; 
-    &+fieldset{margin-top: 10px;}
-    .formLayout{border: none;
-      tr:last-child{
-        th, td{border-bottom: none;}
-      }
+  input[type="checkbox"]{ 
+    border-radius: 3px;
+    &:checked{
+      background: $primBlue url(../images/icon_check.svg) no-repeat 0 0;
+      background-size: 110%;
+      box-shadow: $primBlue 0 0 0 3px; border-color: transparent;
+      border-radius: 2px;
     }
   }
-  legend{
-    border: none; border-radius: 6px 6px 0 0;
-    padding:10px 12px; margin: 0 -2px;width: calc(100% + 4px);
-    background-color: $primBlue; color: $fontInvert;
-    line-height: 1.2; font-size: 1.7rem;
-  }
-
+  
+  
   .formLayout{ background-color: $white;}
 
+
 }
 
 
+// 查詢 //////////////////////////////////////////////////
 .queryHere{
-  width: auto; padding: 1px 0; border-radius: 6px;
-  margin: 0 auto 30px;
+  width: auto; padding: 1px 0; margin: 0 auto 30px;
+  border-radius: 6px;
   background: $white; box-shadow: $borderColor 0 0 8px;
 
   .formLayout{
-    margin:18px auto 0;
-    width: calc(100% - 30px);
+    margin:18px auto 0; width: calc(100% - 30px);
   }
   
   button{
@@ -151,7 +196,7 @@ table.formLayout{
   button, input{height: 3em; font-size: inherit;}
 }
 
-// 連動 select（下拉選單）
+// 連動下拉選單 <select>
 .selectChain{
   display: flex;
   select{
@@ -164,18 +209,19 @@ table.formLayout{
 .optionPool{
   display: flex; flex-flow: row wrap;
   label{
-    flex: 0 0 auto; font-weight: normal;
-    line-height: 1.3;
-    padding: .3em .6em .5em .4em; margin:6px 11px 6px 1px;
-    box-shadow: transparent 0 0 0 1px; border-radius: 3px;
+    flex: 0 0 auto; 
+    line-height: 1.3;font-weight: normal;
+    padding: .45em .6em .5em .4em; margin:6px 11px 6px 1px;
     cursor: pointer;
-    &:hover{box-shadow: #ccc 0 0 0 1px;}
+    box-shadow: transparent 0 0 0 1px; border-radius: 3px;
+    transition: .2s;
+    &:hover{box-shadow: $primBlue 0 0 0 1px;}
     input{margin-right: .3em;}
   }
 }
 .formLayout td>.optionPool {
   margin-right: -11px;
-  &:first-child{ margin-top: -6px;}
+  &:first-child{ margin-top: -4px;}
   &:only-child{ margin-bottom: -6px;}
 }
 
@@ -199,18 +245,12 @@ table.formLayout{
       content: "";
       position: absolute; left: calc(50% - 2px);top: calc(50% - 10px);
       width: 4px; height: 20px; border-radius: 2px;
-      background-color: #999;
+      background-color: $borderColorDark;
     }
-    &::before{
-      transform: rotate(-45deg);
-    }
-    &::after{
-      transform: rotate(45deg);
-    }
+    &::before{transform: rotate(-45deg);}
+    &::after{transform: rotate(45deg);}
     &:hover{
-      &::before, &::after{
-        background-color: $focus;
-      }
+      &::before, &::after{background-color: $focus;}
     }
 
   }
@@ -229,13 +269,11 @@ table.formLayout{
     &:last-child{ margin-right: 0;}
   }
 
-  &+.oneline{margin-top: 10px;}
+  &+.inlineForm{margin-top: 10px;}
   &+.optionPool{margin-top: 5px;}
-
-
 }
 
-// namePhoneSet ------
+// 姓名＋數入框
 .namePhoneSet{
   display: flex;
   input{
@@ -249,22 +287,39 @@ table.formLayout{
 .selectionSet{
   display: flex;
   &>*{ margin-left: 6px;}
-  .selected{
-    flex:1 1 60%;
-    min-height: 8em; max-height: 12.5em; overflow-y: scroll; overflow-x: hidden;
+  .checkOptions{
+    flex:1 1 65%; min-height: 8em; max-height: 12.5em;
     padding:6px; margin-left: 0; border-radius: 4px;
-    background-color: #fff; border: 1px solid #ccc;
-    label{
-      display: block; position: relative;
-      font-weight: normal;cursor: pointer;border-radius: 3px;
-      padding:4px 4px 4px 1.6em;
-      &:hover{
-        box-shadow: #ccc 0 0 0 1px; 
-      }
-      input{ position: absolute; left: 4px; top: 4px;}
-    }
+    background-color: $white; border: 1px solid $borderColorLight;
+    .option{margin: 0;}
   }
   button{ flex: 0 1 4em;}
+}
+// 複選勾選項
+.checkOptions{
+  overflow-y: scroll; overflow-x: hidden;
+  padding:6px; margin-left: 0; border-radius: 4px;
+  .option{
+    position: relative;
+    font-weight: normal;cursor: pointer;border-radius: 3px;
+    padding:4px 4px 4px 2em; margin: 3px 0; min-height: 2.2em;
+    text-indent: -2em;
+    &:hover{box-shadow: $borderColorLight 0 0 0 1px;}
+    input{ 
+      position: static; margin: 0 8px 0 4px; cursor: pointer;
+      &::before{
+        content: ''; position: absolute; top: 0; height: 100%; width: calc(100% - 1em);
+      }
+    }
+  }
+}
+.checkOptions.alone{
+  border: 1px solid $borderColorLight;
+  display: flex; flex-flow: row wrap;
+  &>.option{
+    flex:1 0 45%;
+    &:nth-child(even) { margin-left: 1em;}
+  }
 }
 
 //活動直播場次時段設定
@@ -278,7 +333,6 @@ table.formLayout{
     .optionPool{margin-left: 5px;}
   }
   &>button{ margin-left: 2.5em; min-width: 7em;}
-
   &+p.note{margin-top: 1em;}
 }
 
@@ -290,7 +344,7 @@ table.formLayout{
 .headerGroup{
   display: flex; justify-content: space-between; align-items: center;
   margin: 0 auto; padding: .3em 0 .3em 5px;
-  h3{ line-height: 1; margin: 0; color: #111; font-size: 1.6em;
+  h3{ line-height: 1; margin: 0; color: $fontDark; font-size: 1.6em;
     .session{ font-size: 1.2em; font-weight: normal;}
   }
   button{
@@ -300,7 +354,6 @@ table.formLayout{
   .btnGroup{
     display: flex; justify-content: flex-end;
   }
-
 }
 
 
@@ -309,23 +362,23 @@ table.formLayout{
   &>table{
     width: 100%; margin: 0;
     line-height: 1.4; border-collapse: collapse;
-    background-color: #fff;
-    border: 2px solid #ccc;
+    background-color: $white;
+    border: 2px solid $borderColor; 
     tr{
       &:hover{ background-color: $trHover;}
-      &[tabindex="0"] {
-        background-color: #f8eeb3;
-        &:hover{background-color: #ffe880;}
-      }
+      // &[tabindex="0"] {
+      //   background-color: #f8eeb3;
+      //   &:hover{background-color: #ffe880;}
+      // }
     }
     thead{
       text-align: center;
-      tr:hover{ background-color: #fff;}
+      tr:hover{ background-color: $white;}
       th{
         position: relative;
         text-align: center; min-width: 6em;
         padding:.8em .3em;
-        border: 1px solid #ccc;border-bottom-color: #888;
+        border: 1px solid $borderColor; border-bottom-color: $borderColorDark;
 
         .sortable{
           padding: .5em 20px .5em .3em;margin: -.5em -.3em;
@@ -336,11 +389,11 @@ table.formLayout{
             opacity: 0;
           }
           &::before{
-            border-width: 0 6px 6px 6px; border-color: transparent transparent #e61 transparent;
+            border-width: 0 6px 6px 6px; border-color: transparent transparent $sortArrow transparent;
             top: calc(50% - 7px)
           }
           &::after{
-            border-width: 6px 6px 0 6px ; border-color: #e61 transparent transparent transparent;
+            border-width: 6px 6px 0 6px ; border-color: $sortArrow transparent transparent transparent;
             top: calc(50% + 1px)
           }
           &:hover{ &::before, &::after{ opacity: .3;} }
@@ -357,8 +410,8 @@ table.formLayout{
     }
 
     td{
-      padding:.4em .5em .35em; text-align: center;
-      border: 1px solid #ccc;
+      padding:.4em .5em .35em; text-align: center; height: 2.6em;
+      border: 1px solid $borderColorLight;
       button{
         height: 2.6em; line-height: 2.6; padding: 0 .8em;
         font-size: inherit;
@@ -375,7 +428,7 @@ table.formLayout{
 
     }
     
-    // 只放 checkbox 或 radio
+    // 只放 checkbox 或 radio 的 td, th
     th.checkCell, td.checkCell{ 
       min-width: 0; padding: 0; position: relative;width: 3em; 
       label{
@@ -405,8 +458,8 @@ table.formLayout{
 // 直播活動列表【報名狀態】數字
 .registrationCount{
   display: inline-block; height: 1.7em; line-height: 1.5;
-  padding: 0 .5em; margin: 3px; border: 1px solid #ddd; border-radius: 2em;
-  .occupied{  color: #ab4242;font-weight: bold;  margin-right: 4px;}
+  padding: 0 .5em; margin: 3px; border: 1px solid $borderColorLight; border-radius: 2em;
+  .occupied{  color: $note;font-weight: bold;  margin-right: 4px;}
   .total{ margin-left: 4px; }
 }
 
@@ -423,13 +476,13 @@ table.formLayout{
         display: block; margin: 0 auto;cursor: pointer;
         border-radius: 1px;
         &:hover{
-          background-color: #5D91BC;
-          box-shadow: #5D91BC 0 0 0 3px;
+          background-color: $primBlueDark;
+          box-shadow: $primBlueDark 0 0 0 3px;
         }
       }
     }
     .ui-pg-input, .ui-pg-selbox{
-      border: 1px solid #ddd; border-radius: 3px;
+      border: 1px solid $borderColorLight; border-radius: 3px;
       height: 2em; width: 4em;
       &:focus{
         border-color: $focus; box-shadow: $focus 0 0 5px;
@@ -437,26 +490,22 @@ table.formLayout{
     }
     .ui-pg-input{
       padding: 0 5px;
+    }
 
-    }
-    .ui-pg-selbox{
-      
-    }
   }
-
-
 }
 
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
 // 直播管理 //////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
 // 直播封面	
 .coverSet{
   .title{
-   display: flex; border-radius: 4px; overflow: hidden;
-   background: #fff;color: #111;
+   display: flex;  overflow: hidden;
+   background: $white;color: $fontDark;
+   border: 1px solid $primBlueDark;border-radius: 4px;
    .pdId, .pdName{ padding: .3em .6em .4em;}
-    .pdId{ background: #505050; color: #fff; }
+    .pdId{ background: $primBlueDark; color: $fontInvert; }
   }
   img{
     display: block; margin: 9px 0;
@@ -472,7 +521,7 @@ table.formLayout{
   li{
     line-height: 1.4;
     padding: .5em 3px .4em;
-    border-bottom: 1px dashed #ccc;
+    border-bottom: 1px dashed $borderColorLight;
     &:last-child{
       border-bottom: none;
     }
@@ -542,41 +591,168 @@ table.formLayout{
 }
 
 
+//
+// 頁籤基本設定 ////////////////////////////////////////////////////
+.tabSet {
+	.tabItems {
+		display: flex;flex-flow: row nowrap;margin: 0 auto;
+		button {
+			flex: 0 1 auto;text-align: center;
+      padding: 0 2em; height: 2.9em; line-height: 3; font-size: 1.1em;
+			border: none;box-shadow: none; border-radius: 0; margin: 0;
+      background: $primBlueDark; color: $fontInvert;
+			cursor: pointer;
+			position: relative;
+      &+button{ margin-left: 2px;}
+      &::before, &::after{
+        content: ''; position: absolute;
+      }
+      &::before{
+        left: 0; right: 0; top: 0; height: 3px;
+        background: rgba(255,255,255,.4);
+      }
+			&::after{
+        visibility: hidden;
+				position: absolute; left: calc(50% - 7px); bottom: -1px;
+				border-style: solid; border-width:0 7px 7px 7px;
+				border-color: transparent transparent $white transparent;
+			}
+			&.active {
+				cursor: default;
+        background: $primBlueBright;
+				&::after{visibility: visible;}
+			}
+		}
+	}
+
+	.tabContent {
+		display: none; padding: 15px 0;
+    background: $white;
+		.skip {
+			position: absolute;right: 0;bottom: 0;width: 1px;height: 1px;padding: 0;
+			background-color: transparent;border: none;
+		}
+	}
+}
+// -----------------------------------------------------------------
+
+
+// field -----------------------------------------------------------------
+.field {
+  margin: 0 auto;
+  border-radius: 6px;overflow: hidden;border: 2px solid $primBlue; 
+  &+.field{margin-top: 10px;}
+  .formLayout{
+    border: none;
+    tr:last-child{
+      th, td{border-bottom: none;}
+    }
+  }
+  .fieldName{
+    padding:10px 12px; margin: 0 ;width: calc(100% + 4px);
+    background-color: $primBlue; color: $fontInvert;
+    line-height: 1.2; font-size: 1.7rem;
+  }
+
+  &>.list, &>.ui-jqgrid-pager{
+    margin: 10px;
+  }
+}
+.tabContent .field{
+  width: calc(100% - 30px);
+}
+
+// 直播數據摘要總覽-----------------------------------------------------------------
+.briefCards{
+  ul, ol{ 
+    list-style: none; margin: 10px 5px 20px; padding: 0; 
+    font-size: 1.1em; line-height: 1.1;
+    display: flex; flex-flow: row wrap;
+  }
+  li{
+    flex: 0 0 auto; margin: 5px;
+    background-color: $white;  box-shadow:$borderColor 0 0 6px;
+    border-radius: 4px; overflow: hidden;
+    display: flex; align-items: stretch;
+    .term, .data{ display: inline-block; padding: 13px 8px 12px;}
+    .term{
+      padding-left: 15px;min-width: 11em;
+      background: $primBlueBright; color: $fontInvert;
+    }
+    .data{
+      padding-right: 15px;min-width: 5.5em; text-align: right;
+    }
+    em{
+      font-style: normal; font-size: 1.3em; margin-right: 2px;
+      margin-top: -2px; display: inline-block; color: $primBlueDark;
+    }
+    
+  }
+}
+
+// 全寬圖表 -----------------------------------------------------------------
+.fullWidthChart{
+  margin: 20px 10px;
+  .title{ font-size: 1.6em; margin: 0 0 5px; color: $fontDark;}
+  figure.chart{
+    display: block; margin: 0; width: 100%;
+    border: 1px solid $borderColorLight;
+    img{display: block; width: 100%;}
+  }
+}
+
+// 表格與圖-----------------------------------------------------------------
+.tableAndChart{
+  margin: 10px;  display: flex;
+  .list{
+    flex: 1 1 auto
+  }
+
+  .chart{
+    flex: 0 0 auto;
+    svg.highcharts-root{
+      font-size: 16px !important;
+    }
+  }
+}
+
+
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 // 燈箱
-.ligbtbox{
-  // display: none;
-  position: fixed; z-index: 3000;
-  width: 90vw; height: calc(100vh - 100px); left: 5vw; top: 70px;
+.lightbox{
+  display: none;z-index: 3000;
+  position: fixed; left: 3vw; top: 70px;
+  width: 94vw; height: calc(100vh - 100px); 
   border-radius: 12px;
   overflow-y: scroll;
-  background-color: #fff;
+  background-color: $white;
   box-shadow: rgba(0,0,0,.4) 0 0 30px;
+  // &.show{ display: block;}
 
   .lbxHeader{ 
     padding: 20px 20px 12px; margin: 0 0 15px;
     line-height: 1.1;
-    font-size: 1.5em;  text-align: center; color: #111;
-    border-bottom: 3px solid #ddd;
+    font-size: 1.5em;  text-align: center; color: $fontDark;
+    border-bottom: 3px solid $borderColorLight;
   }
 
   .closeThis{
-    position: fixed; top:32px; right: calc(5vw + 10px); z-index: 99;
+    position: fixed; top:32px; right: calc(3vw + 10px); z-index: 99;
     width: 48px; height: 48px;border: none; border-radius: 50%;
     background-color: rgba(0,0,0,.8);
     transition: .2s;
     &::before, &::after{
       content: ''; position: absolute; left: calc(50% - 2px); top: calc(50% - 12px);
-      width: 4px; height: 24px; border-radius: 2px; background-color: #fff;
+      width: 4px; height: 24px; border-radius: 2px; background-color: $white;
     }
     &::before{ transform: rotate(45deg);}
     &::after{ transform: rotate(-45deg);}
 
     &:hover{
-      background-color: #b00;
-      box-shadow: #b00 0 0 0 3px;
+      background-color: $note;
+      box-shadow: $note 0 0 0 3px;
     }
   }
 
@@ -588,4 +764,9 @@ table.formLayout{
       border: 2px solid $primBlue;
     }
   }
+}
+.coverAll{
+  display: none; z-index: 2999;
+  position: fixed; left: 0;top: 0;right: 0;bottom: 0;
+  background-color: rgba(0,0,0,.6);
 }
