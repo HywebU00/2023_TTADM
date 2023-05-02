@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>直播活動：新增</title>
+  <title>直播活動：編修</title>
 
   <link rel="stylesheet" href="devoopsv2/plugins/bootstrap/bootstrap.min.css">
   <!-- <link rel="stylesheet" href="css/classic.css" /> -->
@@ -506,7 +506,7 @@
 				</div>
 
         <hgroup class="headerGroup">
-          <h3>新增直播活動</h3>
+          <h3>直播活動管理</h3>
           <div class="btnGroup">
             <button type="button" class="btn btn-info">返回</button>
           </div>
@@ -519,9 +519,9 @@
               <table class="formLayout">
                 <tr>
                   <th>活動ID</th>
-                  <td><div class="noneInput"></div></td>
+                  <td><div class="noneInput">627369</div></td>
                   <th>建立日期</th>
-                  <td><div class="noneInput"></div></td>
+                  <td><div class="noneInput">2023/4/25</div></td>
                 </tr>
                 <tr>
                   <th>活動標題</th>
@@ -539,9 +539,9 @@
                   <th>活動預定直播日期區間</th>
                   <td colspan="3">
                     <div class="period">
-                      起 <input type="text" id="sendTimeS" name="returnMailQueryDto.sendTimeS" placeholder="23230/05/02 13:45">
+                      起 <input type="text" id="sendTimeS" name="returnMailQueryDto.sendTimeS" value="2023/05/02 14:00">
                       <button type="reset" class="clear"></button>
-                      迄 <input type="text" id="xsendTimeE" name="returnMailQueryDto.sendTimeE">
+                      迄 <input type="text" id="xsendTimeE" name="returnMailQueryDto.sendTimeE"value="2023/05/02 15:45">
                       <button type="reset" class="clear"></button>
                     </div>
                     </td>
@@ -551,7 +551,13 @@
                   <td colspan="3">
                     <div class="selectionSet">
                       <div class="checkOptions">
-                        <!-- <div class="option"><input type="checkbox">Beauty &amp; Personal Care -- 美容及個人用品</div> -->
+                        <div class="option"><input type="checkbox">Beauty &amp; Personal Care -- 美容及個人用品</div>
+                        <div class="option"><input type="checkbox">Agricultural &amp; Foods -- 農產及食品</div>
+                        <div class="option"><input type="checkbox">Apparel &amp; Accessories -- 服飾及配件</div>
+                        <!-- <div class="option"><input type="checkbox">Packaging, Printing &amp; Advertising -- 包裝、印刷及廣告</div>
+                        <div class="option"><input type="checkbox">Bicycles -- 自行車</div>
+                        <div class="option"><input type="checkbox">Chemicals -- 化學品</div>
+                        <div class="option"><input type="checkbox">Textile &amp; Leather -- 紡織及皮革</div> -->
                       </div>
                       <button type="button" class="btn btn-info">移除勾選項</button>
                       <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx03">選取</button>
@@ -603,6 +609,7 @@
                     <div class="sessionSet">
                       <ol>
                         <li>
+                          <div class="noneInput">直播ID：<em>12345</em></div>
                           <div class="period">
                             <input type="text" id="sendTimeS" name="returnMailQueryDto.sendTimeS" value="2023/04/01 10:30">
                             <button type="reset" class="clear"></button>
@@ -611,15 +618,17 @@
                           </div>
                           <div class="inlineForm">
                             <input type="text">
-                            <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx01" disabled>選擇廠商</button> 
+                            <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx01">選擇廠商</button> 
                             <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx02">編修資料</button>
                           </div>
                           <div class="optionPool">
                             <label><input type="radio" name="bbbb" checked>現場直播</label>
                             <label><input type="radio" name="bbbb">錄影首播</label>
                           </div>
+                          <button type="button" class="btn btn-danger del">移除此時段</button>
                         </li>
-                        <!-- <li>
+                        <li>
+                          <div class="noneInput">直播ID：<em>54321</em></div>
                           <div class="period">
                             <input type="text" id="sendTimeS" name="returnMailQueryDto.sendTimeS">
                             <button type="reset" class="clear"></button>
@@ -629,13 +638,14 @@
                           <div class="inlineForm">
                             <input type="text">
                             <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx01">選擇廠商</button> 
-                            <button type="button" class="btn btn-info" disabled>編修資料</button>
+                            <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx02">編修資料</button>
                           </div>
                           <div class="optionPool">
                             <label><input type="radio" name="cccc" checked>現場直播</label>
                             <label><input type="radio" name="cccc">錄影首播</label>
                           </div>
-                        </li> -->
+                          <button type="button" class="btn btn-danger del">移除此時段</button>
+                        </li>
                       </ol>
                       <button type="button" class="btn btn-info">新增時段</button>
                     </div>
@@ -984,18 +994,18 @@
               <div class="inlineForm">
                 <input type="text" class="taxIDnumber" placeholder="輸入統一編號">
                 <button type="button" class="btn btn-info">取得廠商資訊</button>
-                <input type="text" readonly="readonly">
+                <input type="text" readonly="readonly" value="16541333-凌網科技股份有限公司(若為選入之報名供應商則不可修改)">
               </div>
             </td>
           </tr>
           <tr>
             <td>直播標題</td>
-            <td><input type="text"></td>
+            <td><input type="text" value="[凌網測試]LiuccTest Hyweb Test, Hair brush, comb"></td>
           </tr>
           <tr>
             <td>直播內容簡介</td>
             <td>
-              <textarea></textarea>
+              <textarea>Beauty Online: Sephora: Makeup, Skincare, Fragrance, Hair & Beauty Products. Beauty Online: Sephora: Makeup, Skincare, Fragrance, Hair & Beauty Products. Beauty Online: Sephora: Makeup, Skincare, Fragrance, Hair & Beauty Products. Beauty Online: Sephora: Makeup, Skincare, Fragrance, Hair & Beauty Products.</textarea>
             </td>
           </tr>
           <tr>
@@ -1006,8 +1016,8 @@
             <td>直播聯絡人/聯絡電話</td>
             <td>
               <div class="namePhoneSet">
-                <input type="text" value="">
-                <input type="tel" value="">
+                <input type="text" value="" placeholder="直播聯絡人">
+                <input type="tel" value="" placeholder="聯絡電話">
               </div>
             </td>
           </tr>
@@ -1018,9 +1028,9 @@
                 <ol>
                   <li>
                     <span class="numb">1</span>
-                    <input type="text" class="pdIDNumber" value="" placeholder="輸入產品ID">
+                    <input type="text" class="pdIDNumber" value="1158853" placeholder="輸入產品ID">
                     <button type="button" class="btn btn-info">取得產品資訊</button>
-                    <input type="text" class="pdDescription" readonly>
+                    <input type="text" class="pdDescription" readonly value="1158853 ebook-hyread">
                     <button type="button" class="btn btn-danger">移除</button>
                   </li>
                   <li>

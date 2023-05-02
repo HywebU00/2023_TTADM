@@ -510,6 +510,45 @@
               <tr>
                 <td>活動名稱</td>
                 <td><input type="text"></td>
+                <td>活動ID</td>
+                <td><input type="text"></td>
+              </tr>
+              <tr>
+                <td>活動開始日期區間</td>
+                <td>
+                  <div class="period">
+                    <input type="text" id="sendTimeS" name="" value="2023/04/26">
+                    <button type="reset" class="clear"></button>
+                    <input type="text" id="xsendTimeE" name="" >
+                    <button type="reset" class="clear"></button>
+                  </div>
+                </td>
+                <td>活動結束日期區間</td>
+                <td>
+                  <div class="period">
+                    <input type="text" id="sendTimeS" name="" value="2023/04/26">
+                    <button type="reset" class="clear"></button>
+                    <input type="text" id="xsendTimeE" name="" >
+                    <button type="reset" class="clear"></button>
+                  </div>
+                </td>
+
+
+                <tr>
+                  <td>建立帳號(email)</td>
+                  <td><input type="email"></td>
+                  <td>建立日期區間</td>
+                  <td>
+                    <div class="period">
+                      <input type="text" id="sendTimeS" name="" value="2023/04/26">
+                      <button type="reset" class="clear"></button>
+                      <input type="text" id="xsendTimeE" name="" >
+                      <button type="reset" class="clear"></button>
+                    </div>  
+                  </td>
+
+                </tr>
+
                 <td>活動狀態</td>
                 <td>
                   <div class="selectChain">
@@ -526,21 +565,11 @@
                     </select>
                   </div>
                 </td>
-              </tr>
-              <tr>
-                <td>預定直播時間</td>
-                <td>
-                  <div class="period">
-                    起 <input type="text" id="sendTimeS" name="" value="2023/04/26 14:55">
-                    <button type="reset" class="clear"></button>
-                    迄 <input type="text" id="xsendTimeE" name="" >
-                    <button type="reset" class="clear"></button>
-                  </div>
-                </td>
+
                 <td>開放報名</td>
                 <td>
                   <div class="optionPool">
-                    <label><input name="yesno" type="radio">全部</label>
+                    <label><input name="yesno" type="radio" checked>全部</label>
                     <label><input name="yesno" type="radio">是</label>
                     <label><input name="yesno" type="radio">否</label>
                   </div>
