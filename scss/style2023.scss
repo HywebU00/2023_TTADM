@@ -715,7 +715,7 @@ table.formLayout{
 .fullWidthChart{
   margin: 20px 10px;
   .title{ font-size: 1.6em; margin: 0 0 5px; color: $fontDark;}
-  figure.chart{
+  figure.highcharts-figure{
     display: block; margin: 0; width: 100%;
     border: 1px solid $borderColorLight;
     img{display: block; width: 100%;}
@@ -726,11 +726,11 @@ table.formLayout{
 .tableAndChart{
   margin: 10px;  display: flex;
   .list{
-    flex: 1 1 auto
+    flex: 1 1 70%;
   }
 
-  .chart{
-    flex: 0 0 auto;
+  figure.highcharts-figure{
+    flex: 1 1 30%;
     svg.highcharts-root{
       font-size: 16px !important;
     }
