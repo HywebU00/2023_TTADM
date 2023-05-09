@@ -551,16 +551,15 @@
                   <td colspan="3">
                     <div class="selectionSet">
                       <div class="checkOptions">
-                        <div class="option"><input type="checkbox">Beauty &amp; Personal Care -- 美容及個人用品</div>
-                        <div class="option"><input type="checkbox">Agricultural &amp; Foods -- 農產及食品</div>
-                        <div class="option"><input type="checkbox">Apparel &amp; Accessories -- 服飾及配件</div>
-                        <!-- <div class="option"><input type="checkbox">Packaging, Printing &amp; Advertising -- 包裝、印刷及廣告</div>
-                        <div class="option"><input type="checkbox">Bicycles -- 自行車</div>
-                        <div class="option"><input type="checkbox">Chemicals -- 化學品</div>
-                        <div class="option"><input type="checkbox">Textile &amp; Leather -- 紡織及皮革</div> -->
+                        <div class="option"><input type="checkbox">【517010】Coffee -- 咖啡</div>
+                        <div class="option"><input type="checkbox">【515020】Tapioca Ball -- 粉圓及珍珠</div>
+                        <div class="option"><input type="checkbox">【512005】Mango -- 芒果</div>
+                        <div class="option"><input type="checkbox">【519010】Non-edible Animal &amp; Plant Oil -- 非食用動植物油</div>
                       </div>
-                      <button type="button" class="btn btn-info">移除勾選項</button>
-                      <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx03">選取</button>
+                      <div class="buttonGroup">
+                        <button type="button" class="btn btn-info">移除勾選項</button>
+                        <button type="button" class="btn btn-info showLightbox" data-lbxid="lbx03">增加產業別</button>
+                      </div>
                     </div>
                   </td>
                 </tr>
@@ -694,7 +693,10 @@
     </div>
   </div>
 
-  <!-- 燈箱 -->
+  <!-- ///////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////// 燈箱 /////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////// -->
+
   <!-- 選擇報名廠商 -->
   <div class="lightbox"  data-lbxid="lbx01">
     <button type="button" class="closeThis"></button>
@@ -1054,55 +1056,125 @@
     </section>
   </div>
 
+
   <!-- 選取產業別 -->
   <div class="lightbox"  data-lbxid="lbx03">
     <button type="button" class="closeThis"></button>
     <div class="lbxHeader">選取產業別</div>
 
     <div class="formA">
-      <form action="">
-        <section class="checkOptions alone">
-          <div class="option"><input type="checkbox">Agricultural &amp; Foods -- 農產及食品</div>
-          <div class="option"><input type="checkbox">Mineral &amp; Metallurgy -- 礦產及金屬材料</div>
-          <div class="option"><input type="checkbox">Chemicals -- 化學品</div>
-          <div class="option"><input type="checkbox">Beauty &amp; Personal Care -- 美容及個人用品</div>
-          <div class="option"><input type="checkbox">Textile &amp; Leather -- 紡織及皮革</div>
-          <div class="option"><input type="checkbox">Apparel &amp; Accessories -- 服飾及配件</div>
-          <div class="option"><input type="checkbox">Luggage, Bags &amp; Cases -- 箱包</div>
-          <div class="option"><input type="checkbox">Timepiece, Jewelry &amp; Eyewear -- 鐘錶、珠寶及眼鏡</div>
-          <div class="option"><input type="checkbox">Hardware -- 五金</div>
-          <div class="option"><input type="checkbox">Tools999 -- 工具</div>
-          <div class="option"><input type="checkbox">Machinery -- 機械</div>
-          <div class="option"><input type="checkbox">Mechanical Parts -- 機械零件</div>
-          <div class="option"><input type="checkbox">Electrical &amp; Electronics -- 電機及電子</div>
-          <div class="option"><input type="checkbox">Consumer Electronics -- 消費性電子</div>
-          <div class="option"><input type="checkbox">Home Appliances -- 家庭用電器</div>
-          <div class="option"><input type="checkbox">Lights &amp; Lighting -- 燈光及照明</div>
-          <div class="option"><input type="checkbox">Computer -- 電腦</div>
-          <div class="option"><input type="checkbox">Telecom Products -- 電信</div>
-          <div class="option"><input type="checkbox">Automobiles &amp; Motorcycles -- 汽機車</div>
-          <div class="option"><input type="checkbox">Bicycles -- 自行車</div>
-          <div class="option"><input type="checkbox">Aerospace -- 航太</div>
-          <div class="option"><input type="checkbox">Ships &amp; Boats -- 船舶</div>
-          <div class="option"><input type="checkbox">Security &amp; Protection -- 安全</div>
-          <div class="option"><input type="checkbox">Medical &amp; Health -- 醫療及保健</div>
-          <div class="option"><input type="checkbox">Measurement &amp; Analysis Instrument -- 量測及分析儀器</div>
-          <div class="option"><input type="checkbox">Construction -- 建材及衛浴設備</div>
-          <div class="option"><input type="checkbox">Furniture -- 家具</div>
-          <div class="option"><input type="checkbox">Houseware -- 家庭用品</div>
-          <div class="option"><input type="checkbox">Toys, Baby &amp; Pet Products -- 玩具、嬰幼兒及寵物用品</div>
-          <div class="option"><input type="checkbox">Sports -- 運動用品</div>
-          <div class="option"><input type="checkbox">Musical Instruments -- 樂器</div>
-          <div class="option"><input type="checkbox">Office &amp; School Supplies -- 辦公室及學校用品</div>
-          <div class="option"><input type="checkbox">Gifts &amp; Crafts -- 禮品及藝品</div>
-          <div class="option"><input type="checkbox">Packaging, Printing &amp; Advertising -- 包裝、印刷及廣告</div>
-          <div class="option"><input type="checkbox">Services -- 服務業</div>
-        </section>
-        <div class="btnDv">
-          <button type="submit" class="btn btn-primary">確定選入</button>
-          <button type="reset" class="btn btn-info">清除</button>
+      <section class="categorySelector">
+        <div class="category">
+          <div class="head">
+            <span class="codeTag">二碼</span>
+          </div>
+          <select size="7">
+            <option data-alias-code="51" value="1">【51】Agricultural &amp; Foods -- 農產及食品</option>
+            <option data-alias-code="52" value="2">【52】Mineral &amp; Metallurgy -- 礦產及金屬材料</option>
+            <option data-alias-code="53" value="3">【53】Chemicals -- 化學品</option>
+            <option data-alias-code="54" value="4">【54】Beauty &amp; Personal Care -- 美容及個人用品</option>
+            <option data-alias-code="55" value="5">【55】Textile &amp; Leather -- 紡織及皮革</option>
+            <option data-alias-code="56" value="6">【56】Apparel &amp; Accessories -- 服飾及配件</option>
+            <option data-alias-code="57" value="7">【57】Luggage, Bags &amp; Cases -- 箱包</option>
+            <option data-alias-code="58" value="8">【58】Timepiece, Jewelry &amp; Eyewear -- 鐘錶、珠寶及眼鏡</option>
+            <option data-alias-code="59" value="9">【59】Hardware -- 五金</option>
+            <option data-alias-code="60" value="10">【60】Tools999 -- 工具</option>
+            <option data-alias-code="61" value="11">【61】Machinery -- 機械</option>
+            <option data-alias-code="62" value="12">【62】Mechanical Parts -- 機械零件</option>
+            <option data-alias-code="63" value="13">【63】Electrical &amp; Electronics -- 電機及電子</option>
+            <option data-alias-code="64" value="14">【64】Consumer Electronics -- 消費性電子</option>
+            <option data-alias-code="65" value="15">【65】Home Appliances -- 家庭用電器</option>
+            <option data-alias-code="66" value="16">【66】Lights &amp; Lighting -- 燈光及照明</option>
+            <option data-alias-code="67" value="17">【67】Computer -- 電腦</option>
+            <option data-alias-code="68" value="18">【68】Telecom Products -- 電信</option>
+            <option data-alias-code="69" value="19">【69】Automobiles &amp; Motorcycles -- 汽機車</option>
+            <option data-alias-code="70" value="20">【70】Bicycles -- 自行車</option>
+            <option data-alias-code="71" value="21">【71】Aerospace -- 航太</option>
+            <option data-alias-code="72" value="22">【72】Ships &amp; Boats -- 船舶</option>
+            <option data-alias-code="73" value="23">【73】Security &amp; Protection -- 安全</option>
+            <option data-alias-code="74" value="24">【74】Medical &amp; Health -- 醫療及保健</option>
+            <option data-alias-code="75" value="25">【75】Measurement &amp; Analysis Instrument -- 量測及分析儀器</option>
+            <option data-alias-code="76" value="26">【76】Construction -- 建材及衛浴設備</option>
+            <option data-alias-code="77" value="27">【77】Furniture -- 家具</option>
+            <option data-alias-code="78" value="28">【78】Houseware -- 家庭用品</option>
+            <option data-alias-code="79" value="29">【79】Toys, Baby &amp; Pet Products -- 玩具、嬰幼兒及寵物用品</option>
+            <option data-alias-code="80" value="30">【80】Sports -- 運動用品</option>
+            <option data-alias-code="81" value="31">【81】Musical Instruments -- 樂器</option>
+            <option data-alias-code="82" value="32">【82】Office &amp; School Supplies -- 辦公室及學校用品</option>
+            <option data-alias-code="83" value="33">【83】Gifts &amp; Crafts -- 禮品及藝品</option>
+            <option data-alias-code="84" value="34">【84】Packaging, Printing &amp; Advertising -- 包裝、印刷及廣告</option>
+            <option data-alias-code="85" value="35">【85】Services -- 服務業</option>
+          </select>
         </div>
-      </form>
+        <div class="category">
+          <div class="head">
+            <span class="codeTag">四碼</span>
+            <button type="button" class="btn btn-xs btn-info" onclick="unselected('2');">清除</button>
+          </div>
+          <select size="7">
+            <option data-alias-code="5105" value="36">【5105】Livestock -- 畜產品</option>
+            <option data-alias-code="5110" value="37">【5110】Seafood -- 水產品</option>
+            <option data-alias-code="5115" value="38">【5115】Vegetables -- 蔬菜</option>
+            <option data-alias-code="5120" value="39">【5120】Fruits -- 水果</option>
+            <option data-alias-code="5125" value="40">【5125】Grain Products -- 農產大宗物資</option>
+            <option data-alias-code="5130" value="41">【5130】Plants &amp; Flowers -- 植物及花卉</option>
+            <option data-alias-code="5135" value="42">【5135】Canned Food -- 罐頭食品</option>
+            <option data-alias-code="5140" value="43">【5140】Dried &amp; Preserved Food -- 脫水及醃製食品</option>
+            <option data-alias-code="5145" value="44">【5145】Prepared Food -- 調理食品</option>
+            <option data-alias-code="5150" value="45">【5150】Food Additives &amp; Ingredients -- 食品添加物及原料</option>
+            <option data-alias-code="5155" value="46">【5155】Seasonings &amp; Condiments -- 調味品</option>
+            <option data-alias-code="5160" value="47">【5160】Health Supplement -- 健康補給品</option>
+            <option data-alias-code="5165" value="48">【5165】Baked Goods, Confectionery &amp; Snacks -- 糖果、零食及烘焙類</option>
+            <option data-alias-code="5170" value="49">【5170】Beverage &amp; Tobacco -- 菸、咖啡、茶及飲料</option>
+            <option data-alias-code="5175" value="50">【5175】Animal Feed -- 飼料</option>
+            <option data-alias-code="5190" value="51">【5190】Other Farm, Animal And Aquatic Products -- 其他農、畜、水產品</option>
+          </select>
+        </div>
+        <div class="category">
+          <div class="head">
+            <span class="codeTag">六碼</span>
+            <button type="button" class="btn btn-xs btn-info" onclick="unselected('4');">清除</button>
+          </div>
+          <select size="7">
+            <option data-alias-code="517060" value="543">【517060】Alcoholic Beverage -- 酒精飲料</option>
+            <option data-alias-code="517040" value="539">【517040】Carbonated Drinks -- 碳酸飲炓</option>
+            <option data-alias-code="517010" value="533">【517010】Coffee -- 咖啡</option>
+            <option data-alias-code="517015" value="534">【517015】Coffee Beans -- 咖啡豆</option>
+            <option data-alias-code="517065" value="544">【517065】Drinking Water -- 水</option>
+            <option data-alias-code="517055" value="542">【517055】Energy Drinks -- 機能性飲料</option>
+            <option data-alias-code="517025" value="536">【517025】Herbal Tea -- 花草茶</option>
+            <option data-alias-code="517030" value="537">【517030】Juice -- 果汁</option>
+            <option data-alias-code="517070" value="545">【517070】Powdered Drinks -- 沖泡式飲料</option>
+            <option data-alias-code="517035" value="538">【517035】Soybean Milk -- 豆漿</option>
+            <option data-alias-code="517045" value="540">【517045】Tea Drinks -- 茶葉飲料</option>
+            <option data-alias-code="517020" value="535">【517020】Tea Leaves -- 茶葉</option>
+            <option data-alias-code="517005" value="532">【517005】Tobacco -- 菸</option>
+            <option data-alias-code="517050" value="541">【517050】Vinegar Soft Drinks -- 醋飲</option>
+          </select>
+          <button type="button" class="btn btn-primary">加入</button>
+        </div>
+  
+        <section class="categorySelected">
+          <h4>已選取的產業別</h4>
+          <div class="flexbox">
+            <div class="selectPool">
+              <div class="option">【517010】Coffee -- 咖啡 <button class="delete" title="移除"></button></div>
+              <div class="option">【548015】Bath Brush &amp; Sponge -- 沐浴刷及沐浴球 <button class="delete" title="移除"></button></div>
+              <div class="option">【515020】Tapioca Ball -- 粉圓及珍珠 <button class="delete" title="移除"></button></div>
+              <div class="option">【512005】Mango -- 芒果 <button class="delete" title="移除"></button></div>
+              <div class="option">【513005】Orchids -- 蘭花 <button class="delete" title="移除"></button></div>
+              <div class="option">【519010】Non-edible Animal &amp; Plant Oil -- 非食用動植物油 <button class="delete" title="移除"></button></div>
+              <div class="option">【561020】Basketball & Soccer Wear -- 籃球服及足球服 <button class="delete" title="移除"></button></div>
+            </div>
+            <button type="button" class="btn btn-info">全部移除</button>
+          </div>
+        </section>
+      </section>
+  
+      <div class="btnDv">
+        <button type="submit" class="btn btn-primary">確定選入</button>
+        <button type="reset" class="btn btn-info">取消</button>
+      </div>
     </div>
   </div>
   
