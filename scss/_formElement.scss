@@ -1,0 +1,94 @@
+// 新增、修改資料的表單 //////////////////////////////////////////////////
+.formA, .queryHere, .formLayout{
+  fieldset{
+    border-radius: 6px;overflow: hidden;border: 2px solid $primBlue; 
+    &+fieldset{margin-top: 10px;}
+    .formLayout{border: none;
+      tr:last-child{
+        th, td{border-bottom: none;}
+      }
+    }
+  }
+  legend{
+    border: none; border-radius: 6px 6px 0 0;
+    padding:10px 12px; margin: 0 -2px;width: calc(100% + 4px);
+    background-color: $primBlue; color: $fontInvert;
+    line-height: 1.2; font-size: 1.7rem;
+  }
+
+  // 表單元件樣式
+  input, textarea, select, button{ font-size: inherit;}
+  input[type="text"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  input[type="file"],
+  textarea,
+  select{
+    height: 2.3em; padding: 0 .6em;
+    background: $white;box-shadow: $borderColor 0 0 0 1px;
+    border-radius: 3px;border: none;
+
+    &:hover{box-shadow: $borderColor 0 0 0 1px;}
+    &:focus{box-shadow: $focus 0 0 0 1px, $focus 0 0 6px;}
+
+    &[readonly]{ 
+      background: $readonly; cursor: default;
+      &:focus{
+        box-shadow: $borderColor 0 0 0 1px;
+      }
+    }
+  }
+  input[type="file"]{ padding: .4em; height: 2.7em;}
+  textarea{
+    display: block;width: 100%;
+    padding-top: .5em;height: 9.5em; line-height: 1.5; 
+    resize: vertical;
+  }
+
+  button, input[type="button"], input[type="submit"], input[type="reset"] {
+    height: 2.3em; line-height: 2.3; padding: 0 .5em;
+    border-radius: 3px;border: none;
+  }
+
+  // radio 和 checkbox 
+  input[type="radio"], input[type="checkbox"] {
+    -webkit-appearance: none; -moz-appearance: none; appearance: none;
+
+    margin:-1px 8px 0 4px; 
+    width: 1.2em; height: 1.2em; line-height: 1; 
+    border: 1px solid $borderColor;
+    vertical-align: middle;
+    transition: .1s;
+  }
+  input[type="radio"] {
+    border-radius: 50%;
+    &:focus, &:checked{
+      border-width: 2px; border-color: $white;
+      box-shadow:$primBlue 0 0 0 3px;
+      background-color: $primBlue;
+    }
+  }
+  input[type="checkbox"]{ 
+    border-radius: 3px;
+    &:checked{
+      background: $primBlue url(../images/icon_check.svg) no-repeat 0 0;
+      background-size: 110%;
+      box-shadow: $primBlue 0 0 0 3px; border-color: transparent;
+      border-radius: 2px;
+    }
+  }
+  
+  
+  .formLayout{ background-color: $white;}
+
+
+}

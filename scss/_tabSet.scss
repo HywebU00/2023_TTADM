@@ -1,0 +1,42 @@
+// 頁籤基本設定 ////////////////////////////////////////////////////
+.tabSet {
+	.tabItems {
+		display: flex;flex-flow: row nowrap;margin: 0 auto;
+		button {
+			flex: 0 1 auto;text-align: center;
+      padding: 0 2em; height: 2.9em; line-height: 3; font-size: 1.1em;
+			border: none;box-shadow: none; border-radius: 0; margin: 0;
+      background: $primBlueDark; color: $fontInvert;
+			cursor: pointer;
+			position: relative;
+      &+button{ margin-left: 2px;}
+      &::before, &::after{
+        content: ''; position: absolute;
+      }
+      &::before{
+        left: 0; right: 0; top: 0; height: 3px;
+        background: rgba(255,255,255,.4);
+      }
+			&::after{
+        visibility: hidden;
+				position: absolute; left: calc(50% - 7px); bottom: -1px;
+				border-style: solid; border-width:0 7px 7px 7px;
+				border-color: transparent transparent $white transparent;
+			}
+			&.active {
+				cursor: default;
+        background: $primBlueBright;
+				&::after{visibility: visible;}
+			}
+		}
+	}
+
+	.tabContent {
+		display: none; padding: 15px 0;
+    background: $white;
+		.skip {
+			position: absolute;right: 0;bottom: 0;width: 1px;height: 1px;padding: 0;
+			background-color: transparent;border: none;
+		}
+	}
+}

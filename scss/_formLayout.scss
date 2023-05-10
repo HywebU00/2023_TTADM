@@ -1,0 +1,49 @@
+// 表單排版用表格 //////////////////////////////////////////////////
+table.formLayout{
+  width: 100%; border-collapse: collapse;
+  border: 1px solid $borderColor;
+  tr:hover{background-color: $trHover;}
+  th, td{
+    padding: .6em; vertical-align: top;
+    border-bottom: 1px solid $borderColor;
+  }
+  th, td:nth-child(odd){
+    width: 11%; padding-top: 1em; padding-left: 1em; 
+    font-weight: bold;text-align: right;
+    position: relative;
+    &::after{
+      content: ''; position: absolute; right: 0; top: 5px; bottom: 5px;
+      width: 1px; background-color: $borderColorLight;
+    }
+  }
+  th:nth-child(3), td:nth-child(3){border-left: 1px solid $borderColor;}
+  th:first-child, td:first-child{ border-left: none;}
+
+  td{
+    &:nth-child(even){width: 35%;}
+    &:last-child{ border-right: none;}
+    &>input:only-child{width: 100%;}
+  }
+
+  caption{ 
+    padding: 10px 12px 7px;margin: 0;
+    border-radius: 6px 6px 0 0;
+    font-size: 1.7rem; line-height: 1.2; text-align: left;
+    background-color: $primBlue; color: $fontInvert;
+  }
+
+
+  // 預設值或帶入的資料
+  .noneInput{
+    height: 2.3em; line-height: 2.3; padding: 0 .2em;
+    em{ font-style: normal; font-weight: bold;}
+  }
+  .note{
+    position: relative; padding-left: 1.2em; margin:.3em 0 0;
+    color: $note;
+    &::before{
+      content: '＊'; position: absolute; left: 0; top: 0;
+    }
+  }
+
+}

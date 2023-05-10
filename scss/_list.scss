@@ -1,0 +1,112 @@
+// .list 列表表格
+.list{
+  &>table{
+    width: 100%; margin: 0;
+    line-height: 1.4; border-collapse: collapse;
+    background-color: $white;
+    border: 2px solid $borderColor; 
+    tr{
+      &:hover{ background-color: $trHover;}
+    }
+    thead{
+      text-align: center;
+      tr:hover{ background-color: $white;}
+      th{
+        position: relative;
+        text-align: center; min-width: 6em;
+        padding:.8em .3em;
+        border: 1px solid $borderColor; border-bottom-color: $borderColorDark;
+
+        .sortable{
+          padding: .5em 20px .5em .3em;margin: -.5em -.3em;
+          cursor: pointer;
+          &::before, &::after{
+            content: ''; position: absolute;right: 5px;
+            width: 0; height: 0; border-style: solid;
+            opacity: 0;
+          }
+          &::before{
+            border-width: 0 6px 6px 6px; border-color: transparent transparent $sortArrow transparent;
+            top: calc(50% - 7px)
+          }
+          &::after{
+            border-width: 6px 6px 0 6px ; border-color: $sortArrow transparent transparent transparent;
+            top: calc(50% + 1px)
+          }
+          &:hover{ &::before, &::after{ opacity: .3;} }
+          &.asc{
+            &::before{opacity: 1;}
+            &::after{ opacity: .3;}
+          }
+          &.desc{
+            &::before{ opacity: .3;}
+            &::after{opacity: 1;}
+          }
+        }
+      }
+    }
+
+    td{
+      padding:.4em .5em .35em; text-align: center; height: 2.6em;
+      border: 1px solid $borderColorLight;
+      button{
+        height: 2.6em; line-height: 2.6; padding: 0 .8em;
+        font-size: inherit;
+        &.btn{margin: 0; line-height: 2.45;}
+      }
+
+      // 直播封面圖
+      .liveCover{
+        display: block; margin:0 auto;
+        max-width: 120px; max-height: 75px;
+      }
+
+      time{ display: inline-block;}
+
+    }
+    
+    // 只放 checkbox 或 radio 的 td, th
+    th.checkCell, td.checkCell{ 
+      min-width: 0; padding: 0; position: relative;width: 3em; 
+      label{
+        position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+        margin: 0; padding: 0;
+        cursor: pointer;
+        input{cursor: pointer; position: relative; top: 50%; transform: translateY(-50%);}
+      }
+    }
+    
+  }
+}
+
+// 分頁
+.list ~ .ui-jqgrid-pager{
+  padding: 10px 0; height: auto;
+  background: none; border: none;
+  .ui-pg-table{
+    width: 100%;
+
+    .ui-pg-button{
+      width: 2em;
+      .ui-icon{
+        display: block; margin: 0 auto;cursor: pointer;
+        border-radius: 1px;
+        &:hover{
+          background-color: $primBlueDark;
+          box-shadow: $primBlueDark 0 0 0 3px;
+        }
+      }
+    }
+    .ui-pg-input, .ui-pg-selbox{
+      border: 1px solid $borderColorLight; border-radius: 3px;
+      height: 2em; width: 4em;
+      &:focus{
+        border-color: $focus; box-shadow: $focus 0 0 5px;
+      }
+    }
+    .ui-pg-input{
+      padding: 0 5px;
+    }
+
+  }
+}

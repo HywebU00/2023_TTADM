@@ -1,0 +1,118 @@
+// headerGroup：區塊標題，可能含功能按鈕
+.headerGroup{
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 0 auto; padding: .3em 0 .3em 5px;
+  h3{ line-height: 1; margin: 0; color: $fontDark; font-size: 1.6em;
+    .session{ font-size: 1.2em; font-weight: normal;}
+  }
+  button{
+    margin: 0 3px; font-size: inherit;
+    &:last-child{margin-right: 0;}
+  }
+  .btnGroup{
+    display: flex; justify-content: flex-end;
+  }
+}
+
+// 直播活動列表【報名狀態】數字
+.registrationCount{
+  display: inline-block; height: 1.7em; line-height: 1.5;
+  padding: 0 .5em; margin: 3px; border: 1px solid $borderColorLight; border-radius: 2em;
+  .occupied{  color: $note;font-weight: bold;  margin-right: 4px;}
+  .total{ margin-left: 4px; }
+}
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////// 直播管理 ////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+// 直播封面	
+.coverSet{
+  .title{
+   display: flex;  overflow: hidden;
+   background: $white;color: $fontDark;
+   border: 1px solid $primBlueDark;border-radius: 4px;
+   .pdId, .pdName{ padding: .3em .6em .4em;}
+    .pdId{ background: $primBlueDark; color: $fontInvert; }
+  }
+  img{
+    display: block; margin: 9px 0;
+    max-width: 360px; max-height: 360px; 
+  }
+  input[type="file"]{width: 100%;}
+}
+
+// 直播廠商
+.compInfo{
+  text-align: left;
+  ul, ol{ list-style: none; margin: 0;padding: 0;}
+  li{
+    line-height: 1.4;
+    padding: .5em 3px .4em;
+    border-bottom: 1px dashed $borderColorLight;
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+}
+
+// 直播產品設定
+.liveDeliveryPdSet{
+  ol{ list-style: none;margin: 0; padding: 0 0 8px 0;}
+  li{
+    display: flex;
+    margin: 0 0 8px; padding:0 0 8px 0;
+    border-bottom: 1px dashed $borderColor;
+
+    .numb{ 
+      width: 2em; text-align: right;
+      padding-right: .4em; margin-top: .4em;
+      &::after{content: '.';}
+    }
+
+    input{ margin: 0 5px;}
+
+    img{
+      flex: 0 0 100px;
+      max-width: 100px; max-height: 100px; object-fit: contain;
+    }
+
+    input{
+      &.pdIDNumber{flex:0 1 10em; width: 10em;}
+      &.pdDescription{ flex: 1 1 50%;}
+    }
+    button{margin-bottom: 0;}
+  }
+
+  &>button{ margin: 0 0 0 2.2em;}
+}
+
+// 選擇報名廠商列表中的「直播產品」
+.liveDeliveryPds{
+  text-align: left;
+  ol{
+    list-style: none;margin: 0 -3px; padding: 0;
+    display: flex; flex-flow: row wrap;
+  }
+  li{
+    padding: 3px; margin: 3px;width: 96px;
+    box-shadow: $borderColorLight 0 0 0 1px;
+    background-color: $white;
+    img{
+      display: block; margin: 0 auto;
+      max-width: 90px; max-height: 90px;
+    }
+    .title{
+      margin: 5px 0 0; line-height: 1.2; font-size: .92em;
+      .pdIDNumber{ display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+      .pdName {
+        padding-top: 4px; margin-top: 4px; border-top: 1px dotted $borderColorLight;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+  .total{ margin: 5px 0 0;}
+
+}

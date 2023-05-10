@@ -1,0 +1,83 @@
+// [直播紀錄]頁
+// 直播數據摘要總覽-----------------------------------------------------------------
+.briefCards{
+  ul, ol{ 
+    list-style: none; margin: 10px 5px 20px; padding: 0; 
+    font-size: 1.1em; line-height: 1.1;
+    display: flex; flex-flow: row wrap;
+  }
+  li{
+    flex: 0 0 auto; margin: 5px;
+    background-color: $white;  box-shadow:$primBlueBright 0 0 0 2px;
+    border-radius: 4px; overflow: hidden;
+    display: flex; align-items: stretch;
+    .term, .data{ display: inline-block; padding: 12px 6px 11px;}
+    .term{
+      padding-left: 15px;min-width: 11em;
+      background: $primBlueBright; color: $fontInvert;
+    }
+    .data{
+      padding-right: 15px;min-width: 5.5em; text-align: right;
+    }
+    em{
+      font-style: normal; font-size: 1.3em; margin-right: 2px;
+      margin-top: -2px; display: inline-block; color: $primBlueDark;
+    }
+    
+  }
+}
+
+// 全寬圖表 -----------------------------------------------------------------
+.fullWidthChart{
+  margin: 20px 10px;
+  .title{ font-size: 1.6em; margin: 0 0 5px; color: $fontDark;}
+  figure.highcharts-figure{
+    display: block; margin: 0; width: 100%;
+    border: 1px solid $borderColorLight;
+    img{display: block; width: 100%;}
+  }
+}
+
+// 表格與圖-----------------------------------------------------------------
+.tableAndChart{
+  margin: 10px;  display: flex;
+  .list{
+    flex: 1 1 70%;
+  }
+
+  figure.highcharts-figure{
+    flex: 1 1 30%;
+    svg.highcharts-root{
+      font-size: 16px !important;
+    }
+  }
+}
+
+
+// 「直播紀錄」資料分區 -----------------------------------------------------------------
+.field {
+  margin: 0 auto;
+  border-radius: 6px;overflow: hidden;border: 2px solid $primBlue; 
+  &+.field{margin-top: 10px;}
+  .formLayout{
+    border: none;
+    tr:last-child{
+      th, td{border-bottom: none;}
+    }
+  }
+  .fieldName{
+    padding:10px 12px; margin: 0 ;width: calc(100% + 4px);
+    background-color: $primBlue; color: $fontInvert;
+    line-height: 1.2; font-size: 1.7rem;
+  }
+
+  &>.list, &>.ui-jqgrid-pager{
+    margin: 10px;
+  }
+}
+
+.tabContent .field{
+  width: calc(100% - 30px);
+}
+
+

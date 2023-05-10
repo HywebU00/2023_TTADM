@@ -1,0 +1,14 @@
+// 查詢 //////////////////////////////////////////////////
+.queryHere{
+  width: auto; padding: 1px 0; margin: 0 auto 30px;
+  border-radius: 6px;
+  background: $white; box-shadow: $borderColor 0 0 8px;
+
+  .formLayout{
+    margin:18px auto 0; width: calc(100% - 30px);
+  }
+  
+  button{
+    height: 2.6em; padding: 0 .8em;
+  }
+}
